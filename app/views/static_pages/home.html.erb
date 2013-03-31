@@ -1,7 +1,11 @@
-<% provide(:title, 'Home') %>
-<h1>Test App</h1>
-<p>
-  This is the home page for project  for Belogorodka school test of chemistry
-  <a href="http://AlexSemchProject.org/">Other project Alex Semch>></a>
-  by ©AlexSemch
-</p>
+
+<div class="center hero-unit">
+ <h1>Test App</h1>
+    <h2>
+        This is the home page for project  for Belogorodka school test of chemistry
+        <a href="http://AlexSemchProject.org/">Other project Alex Semch>></a>
+        by ©AlexSemch
+    </h2>
+  <%= link_to "Увійти в систему!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
