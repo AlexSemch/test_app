@@ -12,7 +12,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :nik, :password, :password_confirmation
+  attr_accessible :nik, :email, :password, :password_confirmation
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
@@ -31,5 +31,4 @@ class User < ActiveRecord::Base
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
   end
-
 end
