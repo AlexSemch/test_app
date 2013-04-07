@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def new
+    unless signed_in?
     @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   def index
@@ -15,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    unless signed_in?
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
@@ -22,6 +27,9 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'new'
+    end
+    else
+      redirect_to root_path
     end
   end 
   
@@ -42,9 +50,14 @@ class UsersController < ApplicationController
     end
 
   def destroy
+    unless  current_user? User.find(params[:id])
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
+    else
+      redirect_to root_path
+      flash.alert = "It was not very clever!"
+    end
   end
 
   private

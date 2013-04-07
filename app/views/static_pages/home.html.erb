@@ -6,6 +6,7 @@
         <a href="http://AlexSemchProject.org/">Other project Alex Semch>></a>
         by ©AlexSemch
     </h2>
-  <%= link_to "Увійти в систему!", signup_path, class: "btn btn-large btn-primary" %>
+  <% unless signed_in? %>
+    <%= link_to "Увійти в систему!", signin_path, class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
