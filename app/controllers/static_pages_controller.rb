@@ -10,6 +10,13 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
-    
+
   end
+
+  def ua
+    params[:locale] = "ua"
+   # set_locale
+  end
+
+
 end

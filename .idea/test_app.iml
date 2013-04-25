@@ -25,6 +25,7 @@
     <orderEntry type="library" scope="PROVIDED" name="annotate (v2.5.0, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v3.0.2, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap-datepicker-rails (v1.0.0.5, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v2.1.0.0, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.6, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
@@ -47,6 +48,7 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v2.0.2, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.7.7, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.5.3, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="meta_request (v0.2.3, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.21, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.7.2, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.5.9, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
@@ -54,6 +56,7 @@
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.3, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.5, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.2, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-contrib (v1.1.0, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-ssl (v1.3.3, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v3.2.13, RVM: ruby-1.9.3-p392 [rails3tutorial2ndEd]) [gem]" level="application" />

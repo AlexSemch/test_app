@@ -1,0 +1,18 @@
+<div class="center hero-unit">
+
+<%= form_for :post, :url => { :action => :create } do |f| %>
+    <p>
+      <%= f.label t(:inp_reg)  %><br>
+      <%= f.text_field :reg %>
+    </p>
+
+    <p>
+      <%= f.label t(:inp_roz) %><br>
+      <%= f.text_field :roz %>
+    </p>
+
+    <p>
+      <%= f.submit t(:generate), class: "btn btn-large btn-primary" %>
+    </p>
+<% end %>
+</div>
