@@ -9,6 +9,7 @@ class CreatePeoples < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :peoples, :user_id, unique: true
     add_index :peoples, [:pip, :birth_date]
   end
 end
