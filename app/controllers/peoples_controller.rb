@@ -3,7 +3,11 @@ class PeoplesController < ApplicationController
 
 
   def new
+   # unless signed_in?
      @people = People.new
+   # else
+      redirect_to root_path
+   # end
   end
 
   def create

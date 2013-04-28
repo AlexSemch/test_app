@@ -13,8 +13,11 @@
 #
 
 class People < ActiveRecord::Base
-  attr_accessible :birth_date, :classchol, :is_teacher, :pip
+  attr_accessible :birth_date, :classchol, :pip
   belongs_to :user
+
+  before_save { |people| people.pip = pip.split(' ').map{ |elem| elem.capitalize }.join(' ')  }
+
   validates :pip, presence: true, length: { minimum: 10 }
-  validates :user_id, presence: true
+  validates :user_id, presence: true, uniqueness: true
 end
