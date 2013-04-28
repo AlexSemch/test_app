@@ -1,6 +1,6 @@
-class CreatePeople < ActiveRecord::Migration
+class CreatePeoples < ActiveRecord::Migration
   def change
-    create_table :people do |t|
+    create_table :peoples do |t|
       t.string :pip
       t.date :birth_date
       t.string :classchol
@@ -9,6 +9,6 @@ class CreatePeople < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :people, [:user_id, :pip, :birth_date]
+    add_index :peoples, [:pip, :birth_date]
   end
 end

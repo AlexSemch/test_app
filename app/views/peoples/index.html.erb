@@ -1,8 +1,12 @@
 <% provide(:title, 'All peoples') %>
 <h1>All peoples</h1>
 
-<%= will_paginate %>
+
 <ul class="users">
- <%= render @peoples %>
+  <% @peoples.each do |people|  %>
+    <li>
+      <%= link_to people.pip, @people %>
+    </li>
+   <% end %>
+
 </ul>
-<%= will_paginate %>

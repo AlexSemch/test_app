@@ -26,7 +26,7 @@ class PeoplesController < ApplicationController
   if @people.update_attributes(params[:people])
       # Handle a successful update.
       flash[:success] = "Profile updated"
-         
+
     else
       render 'edit'
     end
@@ -40,7 +40,8 @@ class PeoplesController < ApplicationController
   end
 
   def index
-    @peoples = People.paginate(page: params[:page])
+    @peoples = People.all
+     #@peoples = People.paginate(page: params[:page])
   end
 
 end
