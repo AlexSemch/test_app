@@ -6,11 +6,13 @@ class PeoplesController < ApplicationController
    # unless signed_in?
      @people = People.new
    # else
-      redirect_to root_path
+      #redirect_to root_path
    # end
   end
 
   def create
+    #@user = User.new(params[:user])
+    #@people = People.new(params[:people])
     @people = current_user.create_people(params[:people])
 
     if @people.save
