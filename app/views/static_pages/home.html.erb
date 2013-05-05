@@ -4,6 +4,7 @@
       <%= link_to image_tag('f_en.jpg'), root_path.sub("?locale=ua", "?locale=en"), :title => t(:cheng_lng) %>
       <%= link_to image_tag('f_ua.jpg'), root_path.sub("?locale=en", "?locale=ua"), :title => t(:cheng_lng) %>
 
+
  <h1><%= t :test_systems %></h1>
     <h2>
         This is the home page for project  for Belogorodka school test of chemistry
@@ -11,7 +12,9 @@
         by ©AlexSemch
     </h2>
   <% unless signed_in? %>
-    <%= link_to t(:sign_up) , signin_path, class: "btn btn-large btn-primary" %>
+    <%= link_to t(:sign_up) , signup_path, class: "btn btn-large btn-primary" %>
   <% end %>
-  <h1><%= t :hello %> </h1>
+
 </div>
+
+

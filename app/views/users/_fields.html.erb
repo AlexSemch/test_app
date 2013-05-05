@@ -1,13 +1,14 @@
 <%= render 'shared/error_messages' %>
 
-<%= f.label :nik %>
+<%= f.label t(:nik) %>
 <%= f.text_field :nik %>
 
-<%= f.label :email %>
+<%= f.label t(:email) %>
 <%= f.text_field :email %>
 
-<%= f.label :password %>
+<%= f.label t(:password) %>
 <%= f.password_field :password %>
 
-<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.label :password_confirmation, t(:confirmation) %>
 <%= f.password_field :password_confirmation %>
+

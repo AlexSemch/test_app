@@ -2,6 +2,9 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to t(:test_systems), root_path, id: "logo" %>
+
+
+
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to t(:home), root_path %></li>
@@ -21,10 +24,14 @@
                   </li>
                 </ul>
               </li>
-          <% else %>
+              <% else %>
               <li><%= link_to t(:sign_in), signin_path %></li>
-          <% end %>
-        </ul>
+            <% end %>
+          <li><%= link_to image_tag('ua.png'),  request.fullpath.split("?")[0].insert(-1,"?locale=ua")  %></li>
+          <li><%= link_to image_tag('gb.png'),  request.fullpath.split("?")[0].insert(-1,"?locale=en")  %></li>
+
+          </ul>
+
       </nav>
     </div>
   </div>
