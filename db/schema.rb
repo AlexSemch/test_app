@@ -11,9 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408082529) do
+ActiveRecord::Schema.define(:version => 20130505144921) do
 
-  create_table "peoples", :force => true do |t|
+  create_table "microposts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "people", :id => false, :force => true do |t|
+    t.integer  "id",                            :null => false
     t.string   "pip"
     t.date     "birth_date"
     t.string   "classchol"
@@ -23,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20130408082529) do
     t.datetime "updated_at",                    :null => false
   end
 
-  add_index "peoples", ["pip", "birth_date"], :name => "index_peoples_on_pip_and_birth_date"
-  add_index "peoples", ["user_id"], :name => "index_peoples_on_user_id", :unique => true
+  add_index "people", ["pip", "birth_date"], :name => "index_peoples_on_pip_and_birth_date"
+  add_index "people", ["user_id"], :name => "index_peoples_on_user_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "nik"

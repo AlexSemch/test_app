@@ -2,8 +2,11 @@ class UsersController < ApplicationController
    before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
    before_filter :correct_user,   only: [:edit, :update]
    before_filter :admin_user,     only: :destroy
-  def show
+
+   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+    #@microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -14,7 +17,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
+
+
+   def index
     @users = User.paginate(page: params[:page])
   end
 

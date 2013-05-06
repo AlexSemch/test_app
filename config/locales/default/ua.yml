@@ -5,6 +5,7 @@ ua:
   home: "Домашня сторінка"
   help: "Допомога"
   users: "Користувачі"
+  error: "помилка"
   account: "Аккаунт"
   profile: "Профіль"
   settings: "Налаштування"
@@ -23,4 +24,6 @@ ua:
   confirmation: "Підтвердження"
   create: "Створити"
   change: "Змінити"
+  delete: "видалити"
+  Y_sure: "Ви впевнені?"
 

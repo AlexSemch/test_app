@@ -5,6 +5,7 @@ en:
   home: "Home"
   help: "Help"
   users: "Users"
+  error: "error"
   account: "Account"
   profile: "Profile"
   settings: "Settings"
@@ -23,3 +24,5 @@ en:
   confirmation: "Confirmation"
   create: "Create"
   change: "Change"
+  delete: "delete"
+  Y_sure: "You sure?"

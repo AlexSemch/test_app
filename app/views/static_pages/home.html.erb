@@ -1,4 +1,22 @@
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
 
+      <div class="span8">
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+    </div>
+
+
+<% else %>
 <div class="center hero-unit">
 
       <%= link_to image_tag('f_en.jpg'), root_path.sub("?locale=ua", "?locale=en"), :title => t(:cheng_lng) %>
@@ -16,5 +34,7 @@
   <% end %>
 
 </div>
+
+<% end %>
 
 
