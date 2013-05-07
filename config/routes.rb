@@ -1,6 +1,6 @@
 TestApp::Application.routes.draw do
   resources :users
-  resources :peoples
+  #resources :peoples
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
 
