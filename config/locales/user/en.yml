@@ -1,0 +1,11 @@
+en:
+  user: "user"
+  edit_user: "Edit user"
+  nik: "Nik"
+  email: "Email"
+  password: "Password"
+  confirmation: "Confirmation"
+  all_user: "All user"
+  user_des: "User destroy!"
+
+

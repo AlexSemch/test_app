@@ -1,0 +1,28 @@
+
+
+<%= f.label t(:first_name) %>
+<%= f.text_field :first_name %>
+
+<%= f.label t(:name) %>
+<%= f.text_field :name %>
+
+<%= f.label t(:second_name) %>
+<%= f.text_field :second_name %>
+
+<%= f.label t(:bir_date) %>
+<%= f.text_field :birth_date, 'data-behaviour' => 'datepicker' %>
+
+<%= f.label t(:class_st) %>
+<%= f.text_field :class_st %>
+
+<%= f.label t(:descr_st) %>
+<%= f.text_area :descr_st %>
+
+<script type="text/javascript">
+    $('[data-behaviour~=datepicker]').datepicker({
+        "format": "yyyy-mm-dd",
+        "weekStart": 1,
+        "autoclose": true
+    }    )
+</script>
+

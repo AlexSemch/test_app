@@ -1,10 +1,16 @@
 TestApp::Application.routes.draw do
+
+
+
+  get "students/top_ten"
+
+
   resources :users do
     member do
       get :following, :followers
     end
   end
-  #resources :peoples
+  resources :students
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

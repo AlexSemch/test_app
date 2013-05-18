@@ -1,0 +1,8 @@
+<ul class="users">
+  <% @top_student.each do |tstud| %>
+      <li>
+        <%= link_to tstud.name, tstud %>
+        <%= tstud.round_ball %>
+      </li>
+  <% end %>
+</ul>

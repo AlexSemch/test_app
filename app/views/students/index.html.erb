@@ -1,0 +1,22 @@
+<% provide(:title, t(:all_student)) %>
+<h1><%= t(:all_students) %></h1>
+<table>
+  <td>
+    <tr>
+        top_student
+    </tr>
+  </td>
+  <td>
+    <tr>
+      <%= will_paginate %>
+      <ul class="users">
+        <%= render @students %>
+      </ul>
+      <%= will_paginate %>
+
+    </tr>
+  </td>
+
+
+</table>
+

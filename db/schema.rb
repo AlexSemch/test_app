@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507071439) do
+ActiveRecord::Schema.define(:version => 20130509090440) do
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -32,6 +32,28 @@ ActiveRecord::Schema.define(:version => 20130507071439) do
   add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
+
+  create_table "students", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "name"
+    t.string   "second_name"
+    t.date     "birth_date"
+    t.integer  "class_st"
+    t.boolean  "is_teacher",    :default => false
+    t.integer  "count_of_test"
+    t.float    "round_ball"
+    t.text     "descr_st"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "students", ["count_of_test", "round_ball"], :name => "index_students_on_count_of_test_and_round_ball"
+  add_index "students", ["first_name"], :name => "index_students_on_first_name"
+  add_index "students", ["name"], :name => "index_students_on_name"
+  add_index "students", ["round_ball"], :name => "index_students_on_round_ball"
+  add_index "students", ["second_name"], :name => "index_students_on_second_name"
+  add_index "students", ["user_id"], :name => "index_students_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "nik"

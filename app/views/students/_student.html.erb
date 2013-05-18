@@ -1,0 +1,12 @@
+<li>
+  <%= link_to student.first_name + ' ' + student.name + ' ' + student.second_name, student %>
+  <%= student.round_ball %>   <%= student.count_of_test %>
+  <% if current_user.admin? %>
+      | <%= link_to t(:delete), student, method: :delete,
+                    data: { confirm: t(:Y_sure) } %>
+      | <%= link_to t(:edit), edit_student_path(student), method: :get  %>
+      | <%= button_to :add_user, action: :add_to_user %>
+
+  <% end %>
+</li>
+

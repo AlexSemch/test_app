@@ -1,0 +1,10 @@
+ ua:
+  add_student: "Додати учня"
+  first_name: "Прізвище"
+  name: "Імя"
+  second_name: "По-батькові"
+  bir_date: "Дата народження"
+  class_st: "Клас"
+  count_test: "Кількість пройдених тестів"
+  round_ball: "Середній бал"
+  descr_st: "Примітка"

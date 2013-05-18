@@ -1,0 +1,15 @@
+<div class="student ">
+
+<%= t(:name) %>  <%= @student.first_name %> <%= @student.name %> <%= @student.second_name %> </br>
+<%= @student.class_st %> </br>
+<%= @student.count_of_test %> </br>
+<%= @student.round_ball %> </br>
+<%= @student.descr_st %> </br>
+ <%= link_to t(:make_betta), root_path, data: {confirm: t("fna#{rand(1..5)}")} %>  <br>
+ |<%= button_to :add_to_mii, :action => "add_to_user", :controller => "students" %>
+
+</div>
+
+
+
+

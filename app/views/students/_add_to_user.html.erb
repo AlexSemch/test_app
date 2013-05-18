@@ -1,0 +1,6 @@
+
+<%= form_for( @student.user.build(user_id: current_user.id),
+             remote: true) do |f| %>
+    <div><%= f.hidden_field :user_id %></div>
+    <%= f.submit "Add_user", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,9 +1,10 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    make_users
-    make_microposts
-    make_relationships
+   # make_users
+   # make_microposts
+   # make_relationships
+    make_students
   end
 end
 def make_users
@@ -37,4 +38,27 @@ def make_relationships
   followers  = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each   { |follower| follower.follow!(user) }
+end
+
+def make_students
+     20.times do |st|
+       f_name = Faker::Name.first_name
+       n_name = Faker::Name.title
+       s_name = Faker::Name.last_name
+       dec = Faker::PhoneNumber.phone_number
+       c_of_test = st + 1
+       r_ball = rand(1..5)
+       r_clas = rand(5..12)
+       stud = Student.create!( first_name: f_name,
+                        name: n_name,
+                        second_name: s_name,
+                        class_st: r_clas,
+                        #count_of_test: c_of_test, #This is wrong!!
+                        #round_ball: r_ball,       #this is wrong!!!
+                        descr_st: dec )
+
+       stud.count_of_test = c_of_test
+       stud.round_ball = r_ball
+       stud.save!
+     end
 end
