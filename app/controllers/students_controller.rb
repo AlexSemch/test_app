@@ -66,12 +66,16 @@ class StudentsController < ApplicationController
   end
 
   def add_to_user
+    @student = Student.find(params[:id])
     #@student = current_user.create_student(params[:student])
-    #current_user.student = (@student)
-    @student.user = (current_user)
+    current_user.student = (@student)
+    @student.save!
+    #@student.user = current_user
+    #render :text => "Student succes add"
     flash[:success] = t(:save)
   end
 
 
+  helper_method :add_to_user
 
 end

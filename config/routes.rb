@@ -3,6 +3,8 @@ TestApp::Application.routes.draw do
 
 
   get "students/top_ten"
+  #put "students#add_to_user"
+  match 'students/add_to_user', to: 'students#add_to_user'
 
 
   resources :users do
