@@ -5,6 +5,7 @@
   second_name: "По-батькові"
   bir_date: "Дата народження"
   class_st: "Клас"
-  count_test: "Кількість пройдених тестів"
+  count_test: "Тестів"
   round_ball: "Середній бал"
   descr_st: "Примітка"
+  Add_to_user: "Додати до мене"

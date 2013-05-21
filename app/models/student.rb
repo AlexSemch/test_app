@@ -20,15 +20,10 @@
 class Student < ActiveRecord::Base
   attr_accessible :birth_date, :class_st, :descr_st, :first_name, :name, :second_name#, :round_ball, :count_of_test
   belongs_to :user, :class_name => "user", :foreign_key => "user_id"
-  validates :first_name, presence: true
-  validates :name, presence: true
-  validates :second_name, presence: true
+  validates :first_name, :name, :second_name, presence: true
   #validates :class, format: 1..12
   default_scope order: 'students.round_ball DESC, students.count_of_test DESC'
 
-  def add_to_user!
-    current_user.student = (@student)
-  end
 
 
 end

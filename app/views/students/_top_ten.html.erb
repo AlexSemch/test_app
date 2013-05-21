@@ -1,0 +1,22 @@
+<ul class="student">
+  <% i=0 %>
+  <table class="table table-bordered table-striped table-hover table-condensed" border="2px">
+    <tr>
+      <th><%= t(:N_pp) %></th>
+      <th><%= t(:student) %></th>
+      <th><%= t(:round_ball) %></th>
+      <th><%= t(:count_test) %></th>
+    </tr>
+  <% @top_student.each do |tstud| %>
+
+        <tr>
+          <td><%= (i+=1).to_s %></td>
+          <td><%= link_to tstud.name, tstud %></td>
+          <td><%= tstud.round_ball %></td>
+          <td><%= tstud.count_of_test %></td>
+        </tr>
+
+
+  <% end %>
+  </table>
+</ul>

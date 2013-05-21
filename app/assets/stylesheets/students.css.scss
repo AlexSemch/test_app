@@ -4,4 +4,32 @@
 .student {
   font-size: large;
   text-align: center;
+  table {
+   font-size: small;
+
+  th {
+    font: #525252;
+    color: rgba(32, 49, 114, 0.83);
+    background-color: #525252;
+  }
+  }
+}
+
+#side {
+  float: right;
+  padding: 1em 2em;
+  width: 15em;
+}
+
+
+.hide-layout {
+  background: #000; /* фон */
+  bottom: 0;  /* координата снизу */
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); /* прозрачность для IE */
+  height: 100%; /* высота на всю страницу */
+  opacity: 0.5;  /* прозрачность слоя */
+  position: fixed; /* фиксируем элемент на странице*/
+  top: 0; /* координата сверху */
+  width: 100%; /* ширина на всю страницу */
+  z-index: 998; /* z-index для перекрытия остальных элементов */
 }

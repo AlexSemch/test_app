@@ -4,7 +4,7 @@ TestApp::Application.routes.draw do
 
   get "students/top_ten"
   #put "students#add_to_user"
-  match 'students/add_to_user', to: 'students#add_to_user'
+
 
 
   resources :users do
@@ -12,7 +12,11 @@ TestApp::Application.routes.draw do
       get :following, :followers
     end
   end
-  resources :students
+  resources :students do
+
+      put :add_to_user
+
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

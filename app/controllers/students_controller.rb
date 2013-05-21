@@ -22,6 +22,12 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.paginate(page: params[:page])
+    @top_student = Student.find_by_sql("select *
+      from students
+      where round_ball is not null
+      order by round_ball DESC, count_of_test DESC
+      limit :M", N: 10)
+
   end
 
   def destroy
@@ -48,7 +54,7 @@ class StudentsController < ApplicationController
       from students
       where round_ball is not null
       order by round_ball DESC, count_of_test DESC
-      limit 10")
+      limit :M", N: 10)
   end
 
   def edit
@@ -66,13 +72,11 @@ class StudentsController < ApplicationController
   end
 
   def add_to_user
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:student_id])
     #@student = current_user.create_student(params[:student])
     current_user.student = (@student)
-    @student.save!
-    #@student.user = current_user
-    #render :text => "Student succes add"
     flash[:success] = t(:save)
+    redirect_to students_path
   end
 
 
