@@ -24,6 +24,17 @@ class Student < ActiveRecord::Base
   #validates :class, format: 1..12
   default_scope order: 'students.round_ball DESC, students.count_of_test DESC'
 
+  def has_user?(student)
+    !(student.user_id).nil?
+  end
+
+
+  #def top_student(n)
+  #  where("round_ball is not null
+  #  order by round_ball DESC, count_of_test DESC
+  #  limit :M", N: n)
+  #end
+
 
 
 end

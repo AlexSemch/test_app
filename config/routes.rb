@@ -2,7 +2,7 @@ TestApp::Application.routes.draw do
 
 
 
-  get "students/top_ten"
+  get "students/top_students"
   #put "students#add_to_user"
 
 

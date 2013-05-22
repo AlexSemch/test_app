@@ -26,7 +26,7 @@ class StudentsController < ApplicationController
       from students
       where round_ball is not null
       order by round_ball DESC, count_of_test DESC
-      limit :M", N: 10)
+      limit :N", N: 5)
 
   end
 
@@ -49,12 +49,12 @@ class StudentsController < ApplicationController
     #end
   end
 
-  def top_ten
+  def top_students
      @top_student = Student.find_by_sql("select *
       from students
       where round_ball is not null
       order by round_ball DESC, count_of_test DESC
-      limit :M", N: 10)
+      limit :N", N: 10) #params[:n])
   end
 
   def edit
@@ -93,6 +93,5 @@ class StudentsController < ApplicationController
   end
 
 
-  helper_method :add_to_user
 
 end
