@@ -15,6 +15,7 @@ TestApp::Application.routes.draw do
   resources :students do
 
       put :add_to_user
+      put :remote_from_user
 
   end
   resources :sessions, only: [:new, :create, :destroy]

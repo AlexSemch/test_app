@@ -5,9 +5,15 @@
       | <%= link_to t(:delete), student, method: :delete,
                     data: { confirm: t(:Y_sure) } %>
       | <%= link_to t(:edit), edit_student_path(student), method: :get  %>
-      <%= button_to t(:Add_to_user), student_add_to_user_path(student), action: :add_to_user, method: :put %>
-
-
+		<div class="student-edit">
+		<% if current_user.id == student.user_id %>
+			<%= button_to t(:Remot_from_user), student_remote_from_user_path(student), action: :remote_from_user, method: :put %>
+		<% else %>
+			<%= button_to t(:Add_to_user), student_add_to_user_path(student), action: :add_to_user, method: :put %>
+		      	
+		<% end %>	      
+      	</div>
+		
   <% end %>
 </li>
 

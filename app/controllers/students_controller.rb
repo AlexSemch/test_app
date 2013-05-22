@@ -71,12 +71,25 @@ class StudentsController < ApplicationController
     end
   end
 
+    # PUT метод (привязати акаун до студента)
   def add_to_user
     @student = Student.find(params[:student_id])
     #@student = current_user.create_student(params[:student])
     current_user.student = (@student)
     flash[:success] = t(:save)
     redirect_to students_path
+  end
+
+
+   # PUT метод (відписати акаунт від учня)
+  def remote_from_user
+    @student = Student.find(params[:student_id])
+    @student.user_id = nil
+    if @student.save
+       flash[:saccess] = "successfull remote_from_user"
+
+     end 
+     redirect_to students_path
   end
 
 
