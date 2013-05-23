@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .student {
+  body {
+    background-image: "fon.png";
+  }
+
   font-size: large;
   text-align: center;
   table {
+
    font-size: small;
+
 
   th {
     font: #525252;
@@ -38,4 +44,20 @@
   form, div {
     display: inline;
   }
+}
+
+
+.table_show {
+  table-layout: auto;
+  cellpadding: 20px;
+
+}
+.family{
+  font-size: 24px;
+  text-align: center;
+  line-height: 32px;
+  font: Tahoma;
+  font-style: oblique;
+  font-weight: 800;
+  color: #051bff;
 }
