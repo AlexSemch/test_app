@@ -54,7 +54,7 @@ class StudentsController < ApplicationController
       from students
       where round_ball is not null
       order by round_ball DESC, count_of_test DESC
-      limit :N", N: 10) #params[:n])
+      limit :N", N: params[:count].to_i) #params[:n])
   end
 
   def edit

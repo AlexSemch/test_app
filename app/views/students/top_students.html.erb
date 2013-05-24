@@ -1,6 +1,9 @@
 <ul class="student">
   <% i=0 %>
-  <%= select "post", "count", 1..20, remote: true %>
+  <div class="select_drop">
+  <%= select "post", "count", 5..20, options = {}, {:onchange =>  "$('top_s').location.reload()"} %>
+  </div>
+  <div id="top_s">
   <table class="table table-bordered table-striped table-hover table-condensed" border="2px">
     <tr>
       <th><%= t(:N_pp) %></th>
@@ -19,4 +22,5 @@
 
     <% end %>
   </table>
+  </div>
 </ul>

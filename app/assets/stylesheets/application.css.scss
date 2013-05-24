@@ -12,4 +12,8 @@
  *= require_self
  *= require_tree .
  */
-
+.fon{
+  body {
+    background-image: url("fon.png");
+  }
+}
