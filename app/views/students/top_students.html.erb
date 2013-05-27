@@ -1,7 +1,9 @@
 <ul class="student">
   <% i=0 %>
   <div class="select_drop">
-  <%= select "post", "count", 5..20, options = {}, {:onchange =>  "$('top_s').location.reload()"} %>
+  <%= select_tag "count", "<option>5</option><option>10</option><option>15</option><option>20</option>".html_safe %>
+
+
   </div>
   <div id="top_s">
   <table class="table table-bordered table-striped table-hover table-condensed" border="2px">
