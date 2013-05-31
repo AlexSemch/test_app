@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question text:</b>
+  <%= @dquestion.question_text %>
+</p>
+
+<p>
+  <b>Count answer:</b>
+  <%= @dquestion.count_answer %>
+</p>
+
+<p>
+  <b>Dtest:</b>
+  <%= @dquestion.dtest_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_dquestion_path(@dquestion) %> |
+<%= link_to 'Back', dquestions_path %>

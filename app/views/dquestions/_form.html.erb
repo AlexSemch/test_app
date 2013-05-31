@@ -1,0 +1,29 @@
+<%= form_for(@dquestion) do |f| %>
+  <% if @dquestion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dquestion.errors.count, "error") %> prohibited this dquestion from being saved:</h2>
+
+      <ul>
+      <% @dquestion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :question_text %><br />
+    <%= f.text_area :question_text %>
+  </div>
+  <div class="field">
+    <%= f.label :count_answer %><br />
+    <%= f.number_field :count_answer %>
+  </div>
+  <div class="field">
+    <%= f.label :dtest_id %><br />
+    <%= f.text_field :dtest_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

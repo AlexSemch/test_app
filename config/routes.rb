@@ -2,6 +2,12 @@ TestApp::Application.routes.draw do
 
 
 
+  resources :dquestions
+
+
+  resources :dtests
+
+
   get "students/top_students"
   #put "students#add_to_user"
 

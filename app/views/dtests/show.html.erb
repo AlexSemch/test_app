@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Test name:</b>
+  <%= @dtest.test_name %>
+</p>
+
+<p>
+  <b>Count test:</b>
+  <%= @dtest.count_test %>
+</p>
+
+<p>
+  <b>Time exec:</b>
+  <%= @dtest.time_exec %>
+</p>
+
+<p>
+  <b>Test descr:</b>
+  <%= @dtest.test_descr %>
+</p>
+
+
+<%= link_to 'Edit', edit_dtest_path(@dtest) %> |
+<%= link_to 'Back', dtests_path %>
