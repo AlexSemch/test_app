@@ -2,6 +2,8 @@ class DtestsController < ApplicationController
   # GET /dtests
   # GET /dtests.json
   def index
+
+    session[:test_ids] = 4
     @dtests = Dtest.all
 
     respond_to do |format|
@@ -32,10 +34,7 @@ class DtestsController < ApplicationController
     end
   end
 
-  # GET /dtests/1/edit
-  def edit
-    @dtest = Dtest.find(params[:id])
-  end
+ 
 
   # POST /dtests
   # POST /dtests.json
@@ -51,6 +50,19 @@ class DtestsController < ApplicationController
         format.json { render json: @dtest.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+
+
+ # GET /dtests/1/edit
+  def edit
+    @dtest = Dtest.find(params[:id])
+  end
+
+  def add_question
+    session[:test_ids] = params[:id]
+    format.html { render  action: "dquestions/new" }
+    #@dtest = Dtest.find(params[:id])
   end
 
   # PUT /dtests/1

@@ -1,16 +1,13 @@
-<footer class="footer navbar navbar-fixed-bottom navbar-inner" >
+<footer class="footer navbar" >
 
   <small>
     <a href="http://www.youtube.com/user/bsfocus27/" class="nav nav-pills ">Youtube chanel by Alex Semch</a>
   </small>
-  <topp >
-    <a href="javascript:scroll(0,0)" class="nav nav-pills "> ^ TO TOP!</a>
-    <a href="javascript:scroll(0,99999)" class="nav nav-pills " > V TO BOTTOM!</a>
-  </topp>
   <nav >
     <ul class="nav pull-right">
       <li><%= link_to "About",   about_path %></li>
       <li><%= link_to "Contact", contact_path %></li>
+      <li><%= link_to t(:help), help_path %></li>
       <li><a href="http://news.railstutorial.org/">News  </a></li>
     </ul>
   </nav>

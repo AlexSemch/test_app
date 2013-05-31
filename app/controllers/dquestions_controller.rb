@@ -40,8 +40,8 @@ class DquestionsController < ApplicationController
   # POST /dquestions
   # POST /dquestions.json
   def create
-    @dtest = Dtest.find(params[:dtest_id])
-    @dquestion = @dtest.Dquestion.new(params[:dquestion])
+    @dtest = Dtest.find(session[:test_ids])
+    @dquestion = @dtest.dquestions.new(params[:dquestion])
 
     respond_to do |format|
       if @dquestion.save

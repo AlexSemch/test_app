@@ -5,8 +5,10 @@ TestApp::Application.routes.draw do
   resources :dquestions
 
 
-  resources :dtests
-
+  resources :dtests do
+    get "tests/add_questions"
+  end
+  #get "dtests/add_questions"
 
   get "students/top_students"
   #put "students#add_to_user"
