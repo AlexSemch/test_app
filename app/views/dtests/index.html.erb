@@ -1,25 +1,26 @@
 <h1>Listing dtests</h1>
 
-<table>
+<table class = "table table-striped">
   <tr>
     <th>Test name</th>
     <th>Count test</th>
     <th>Time exec</th>
     <th>Test descr</th>
     <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @dtests.each do |dtest| %>
   <tr>
-    <td><%= dtest.test_name %></td>
+    <td><%== dtest.test_name %></td>
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>
     <td><%= dtest.test_descr %></td>
-    <td><%= link_to 'Show', dtest %></td>
-    <td><%= link_to 'Edit', edit_dtest_path(dtest) %></td>
-    <td><%= link_to 'Destroy', dtest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', dtest %> | 
+    <%= link_to 'Edit', edit_dtest_path(dtest) %> | 
+    <%= link_to 'Destroy', dtest, method: :delete, data: { confirm: 'Are you sure?' } %> || 
+    <%= link_to 'Add_quest', new_dquestion_path  %>
+  </td>
   </tr>
 <% end %>
 </table>

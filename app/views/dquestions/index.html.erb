@@ -12,7 +12,7 @@
 
 <% @dquestions.each do |dquestion| %>
   <tr>
-    <td><%= dquestion.question_text %></td>
+    <td><%== dquestion.question_text %></td>
     <td><%= dquestion.count_answer %></td>
     <td><%= dquestion.dtest_id %></td>
     <td><%= link_to 'Show', dquestion %></td>

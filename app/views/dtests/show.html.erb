@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
+ <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+  bkLib.onDomLoaded(function() {
+        new nicEditor({buttonList : []}).panelInstance('test_name');
+
+  });
+  //]]>
+  </script>
 
 <p>
   <b>Test name:</b>
-  <%= @dtest.test_name %>
+ <%== @dtest.test_name %>
 </p>
 
 <p>
@@ -23,3 +31,4 @@
 
 <%= link_to 'Edit', edit_dtest_path(@dtest) %> |
 <%= link_to 'Back', dtests_path %>
+<%= link_to 'Add questions', "#"  %>

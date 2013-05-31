@@ -11,7 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509090440) do
+ActiveRecord::Schema.define(:version => 20130531124449) do
+
+  create_table "dic_tests", :force => true do |t|
+    t.string   "test_name"
+    t.integer  "count_of_test"
+    t.integer  "time_to_exec"
+    t.text     "descr_test"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "dquestions", :force => true do |t|
+    t.text     "question_text"
+    t.integer  "count_answer",  :default => 4
+    t.string   "dtest_id"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "dquestions", ["dtest_id"], :name => "index_dquestions_on_dtest_id"
+
+  create_table "dtests", :force => true do |t|
+    t.text     "test_name"
+    t.integer  "count_test", :default => 20
+    t.integer  "time_exec",  :default => 20
+    t.text     "test_descr"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "dtests", ["test_name"], :name => "index_dtests_on_test_name"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
