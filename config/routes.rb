@@ -2,11 +2,12 @@ TestApp::Application.routes.draw do
 
 
 
-  resources :dquestions
+  #resources :dquestions
 
 
   resources :dtests do
-    get "tests/add_questions"
+    #put :add_question
+    resources :dquestions
   end
   #get "dtests/add_questions"
 

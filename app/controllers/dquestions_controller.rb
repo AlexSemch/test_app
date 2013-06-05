@@ -2,22 +2,24 @@ class DquestionsController < ApplicationController
   # GET /dquestions
   # GET /dquestions.json
   def index
-    @dquestions = Dquestion.all
+    #@dtest = Dtest.find(params[:dtest_id])
+    @dquestions = Dquestion.find_all_by_dtest_id(params[:dtest_id])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @dquestions }
+      format.json { render json: [:dtest, @dquestion] }
     end
   end
 
   # GET /dquestions/1
   # GET /dquestions/1.json
   def show
+    @dtest = Dtest.find(params[:dtest_id])
     @dquestion = Dquestion.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @dquestion }
+      format.json { render json: [@dtest, @dquestion] }
     end
   end
 
@@ -26,27 +28,28 @@ class DquestionsController < ApplicationController
   def new
     @dquestion = Dquestion.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @dquestion }
-    end
+   # respond_to do |format|
+   #   format.html # new.html.erb
+   #   format.json { render json: @dquestion }
+   # end
   end
 
   # GET /dquestions/1/edit
   def edit
+    @dtest = Dtest.find(params[:dtest_id])
     @dquestion = Dquestion.find(params[:id])
   end
 
   # POST /dquestions
   # POST /dquestions.json
   def create
-    @dtest = Dtest.find(session[:test_ids])
+    @dtest = Dtest.find(params[:dtest_id])
     @dquestion = @dtest.dquestions.new(params[:dquestion])
 
     respond_to do |format|
       if @dquestion.save
-        format.html { redirect_to @dquestion, notice: 'Dquestion was successfully created.' }
-        format.json { render json: @dquestion, status: :created, location: @dquestion }
+        format.html { redirect_to [@dtest,@dquestion], notice: 'Dquestion was successfully created.' }
+        format.json { render json: [@dtest,@dquestion], status: :created, location: [@dtest,@dquestion] }
       else
         format.html { render action: "new" }
         format.json { render json: @dquestion.errors, status: :unprocessable_entity }
@@ -57,11 +60,12 @@ class DquestionsController < ApplicationController
   # PUT /dquestions/1
   # PUT /dquestions/1.json
   def update
+    @dtest = Dtest.find(params[:dtest_id])
     @dquestion = Dquestion.find(params[:id])
 
     respond_to do |format|
       if @dquestion.update_attributes(params[:dquestion])
-        format.html { redirect_to @dquestion, notice: 'Dquestion was successfully updated.' }
+        format.html { redirect_to [@dtest, @dquestion], notice: 'Dquestion was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,7 +81,7 @@ class DquestionsController < ApplicationController
     @dquestion.destroy
 
     respond_to do |format|
-      format.html { redirect_to dquestions_url }
+      format.html { redirect_to dtest_dquestions_url }
       format.json { head :no_content }
     end
   end

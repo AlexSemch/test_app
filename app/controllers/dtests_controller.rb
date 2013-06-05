@@ -3,7 +3,6 @@ class DtestsController < ApplicationController
   # GET /dtests.json
   def index
 
-    session[:test_ids] = 4
     @dtests = Dtest.all
 
     respond_to do |format|
@@ -59,12 +58,16 @@ class DtestsController < ApplicationController
     @dtest = Dtest.find(params[:id])
   end
 
-  def add_question
-    session[:test_ids] = params[:id]
-    format.html { render  action: "dquestions/new" }
-    #@dtest = Dtest.find(params[:id])
-  end
 
+  #---------------------------------------------------
+  #def add_question
+   # session[:test_ids] = params[:dtest_id]
+  #  render :template => "dquestions/new"
+    #@dtest = Dtest.find(params[:id])
+  #end
+
+
+  #________________________________________________
   # PUT /dtests/1
   # PUT /dtests/1.json
   def update
