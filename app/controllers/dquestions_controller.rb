@@ -1,20 +1,23 @@
 class DquestionsController < ApplicationController
+  before_filter :fdtest
+
   # GET /dquestions
   # GET /dquestions.json
+  
   def index
-    #@dtest = Dtest.find(params[:dtest_id])
-    @dquestions = Dquestion.find_all_by_dtest_id(params[:dtest_id])
+
+   @dquestions = Dquestion.find_all_by_dtest_id(@dtest.id)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: [:dtest, @dquestion] }
+     format.html # index.html.erb
+     format.json { render json:  [@dtest, @dquestion] }
     end
   end
 
   # GET /dquestions/1
   # GET /dquestions/1.json
   def show
-    @dtest = Dtest.find(params[:dtest_id])
+   
     @dquestion = Dquestion.find(params[:id])
 
     respond_to do |format|
@@ -28,22 +31,21 @@ class DquestionsController < ApplicationController
   def new
     @dquestion = Dquestion.new
 
-   # respond_to do |format|
-   #   format.html # new.html.erb
-   #   format.json { render json: @dquestion }
-   # end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @dquestion }
+    end
   end
 
   # GET /dquestions/1/edit
   def edit
-    @dtest = Dtest.find(params[:dtest_id])
     @dquestion = Dquestion.find(params[:id])
   end
 
   # POST /dquestions
   # POST /dquestions.json
   def create
-    @dtest = Dtest.find(params[:dtest_id])
+   
     @dquestion = @dtest.dquestions.new(params[:dquestion])
 
     respond_to do |format|
@@ -60,7 +62,7 @@ class DquestionsController < ApplicationController
   # PUT /dquestions/1
   # PUT /dquestions/1.json
   def update
-    @dtest = Dtest.find(params[:dtest_id])
+    
     @dquestion = Dquestion.find(params[:id])
 
     respond_to do |format|
@@ -84,5 +86,9 @@ class DquestionsController < ApplicationController
       format.html { redirect_to dtest_dquestions_url }
       format.json { head :no_content }
     end
+  end
+
+  def fdtest
+     @dtest = Dtest.find(params[:dtest_id])
   end
 end
