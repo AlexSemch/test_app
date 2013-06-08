@@ -5,13 +5,13 @@ class DquestionsController < ApplicationController
   # GET /dquestions.json
   
   def index
+    @dquestions = Dquestion.where(dtest_id: @dtest.id)
+   #@dquestions = Dquestion.find_all_by_dtest_id(@dtest.id)
 
-   @dquestions = Dquestion.find_all_by_dtest_id(@dtest.id)
-
-    respond_to do |format|
-     format.html # index.html.erb
-     format.json { render json:  [@dtest, @dquestion] }
-    end
+    #respond_to do |format|
+    # format.html # index.html.erb
+    # format.json { render json:  [@dtest, @dquestion] }
+    #end
   end
 
   # GET /dquestions/1
@@ -31,10 +31,10 @@ class DquestionsController < ApplicationController
   def new
     @dquestion = Dquestion.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @dquestion }
-    end
+    #respond_to do |format|
+    #  format.html # new.html.erb
+    #  format.json { render json: @dquestion }
+    #end
   end
 
   # GET /dquestions/1/edit
@@ -47,22 +47,24 @@ class DquestionsController < ApplicationController
   def create
    
     @dquestion = @dtest.dquestions.new(params[:dquestion])
-
     respond_to do |format|
-      if @dquestion.save
-        format.html { redirect_to [@dtest,@dquestion], notice: 'Dquestion was successfully created.' }
-        format.json { render json: [@dtest,@dquestion], status: :created, location: [@dtest,@dquestion] }
+      if @dquestion.save  
+        
+        format.html { redirect_to dtest_dquestions_url(@dtest) }
+        format.js
       else
-        format.html { render action: "new" }
-        format.json { render json: @dquestion.errors, status: :unprocessable_entity }
+       
+        format.html { redirect_to dtests_url }
       end
+
     end
+
   end
 
   # PUT /dquestions/1
   # PUT /dquestions/1.json
   def update
-    
+
     @dquestion = Dquestion.find(params[:id])
 
     respond_to do |format|
@@ -83,8 +85,9 @@ class DquestionsController < ApplicationController
     @dquestion.destroy
 
     respond_to do |format|
-      format.html { redirect_to dtest_dquestions_url }
-      format.json { head :no_content }
+      
+        format.html { redirect_to dtest_dquestions_url(@dtest) }
+        format.js
     end
   end
 

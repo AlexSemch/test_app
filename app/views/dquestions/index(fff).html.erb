@@ -1,0 +1,12 @@
+<h1>Listing dquestions</h1>
+
+<%= link_to 'Tests', dtests_path %>
+<div class="dquestion"  id="dquestions">
+  <% @dquestions.each do |dquestion| %>
+        <%= render dquestion %>
+  <% end %>
+
+</div>
+<br />
+
+<%= link_to 'New Dquestion', new_dtest_dquestion_path(@dtest), id: "new_dquest", remote: true  %>

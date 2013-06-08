@@ -1,0 +1,9 @@
+en:
+  quest: "Question"
+  quests: "Questions"
+  add_quest: "Add question"
+  question_text: "Question text"
+  count_answer: "Count of answer"
+  edit_quest: "Editing question"
+  list_quest: "Listing questions"
+  new_quest: "New question"

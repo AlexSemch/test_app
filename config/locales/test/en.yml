@@ -1,0 +1,16 @@
+en:
+  test: "Test"
+  tests: "Tests"
+  a_test: "Add test"
+  b_tests: "Back to tests"
+  n_test: "New test"
+  notise_test: "Test was successfully created"
+  dest_test: "Test was successfully destroyed"
+  upd_test: "Test was successfully updated"
+  test_name: "Test name"
+  count_test: "Count of test"
+  time_exec: "Time for execute test"
+  test_descr: "Descr to test"
+  edit_test: "Editing test"
+  list_test: "Listing tests"
+

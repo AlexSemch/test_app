@@ -1,6 +1,6 @@
-<h1>Editing dquestion</h1>
+<h1><%= t(:edit_quest) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', dtest_dquestion_path(@dtest) %> |
-<%= link_to 'Back', dtest_dquestions_path(@dtest) %>
+<%= link_to t(:show), dtest_dquestion_path(@dtest) %> |
+<%= link_to t(:back), dtest_dquestions_path(@dtest) %>

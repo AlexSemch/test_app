@@ -1,0 +1,9 @@
+ua:
+    quest: "Питання"
+    quests: "Питання"
+    add_quest: "Додати питання"
+    question_text: "Текст питання"
+    count_answer: "Кількість відповідей"
+    edit_quest: "Редагування питання"
+    list_quest: "Список питань"
+    new_quest: "Нове питання"

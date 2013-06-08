@@ -1,20 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Question text:</b>
+  <b><%= t(:question_text)+':' %></b>
   <%== @dquestion.question_text %>
 </p>
 
 <p>
-  <b>Count answer:</b>
+  <b><%= t(:count_answer)+':' %></b>
   <%= @dquestion.count_answer %>
 </p>
 
 <p>
-  <b>Dtest:</b>
+  <b><%= t(:test)+':' %></b>
   <%= @dquestion.dtest_id %>
 </p>
 
 
-<%= link_to 'Edit', [:edit, @dtest, @dquestion] %> |
-<%= link_to 'Back',  dtest_dquestions_url(@dtest.id, @dquestions) %>
+<%= link_to t(:edit), [:edit, @dtest, @dquestion] %> |
+<%= link_to t(:back),  dtest_dquestions_url(@dtest.id, @dquestions) %>

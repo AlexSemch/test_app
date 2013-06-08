@@ -1,11 +1,11 @@
-<h1>Listing dtests</h1>
+<h1><%= t(:list_test) %></h1>
 
 <table class = "table table-striped">
   <tr>
-    <th>Test name</th>
-    <th>Count test</th>
-    <th>Time exec</th>
-    <th>Test descr</th>
+    <th><%= t(:test_name) %></th>
+    <th><%= t(:count_test) %></th>
+    <th><%= t(:time_exec) %></th>
+    <th><%= t(:test_descr) %></th>
     <th></th>
     
   </tr>
@@ -16,10 +16,10 @@
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>
     <td><%= dtest.test_descr %></td>
-    <td><%= link_to 'Show', dtest %> | 
-    <%= link_to 'Edit', edit_dtest_path(dtest) %> | 
-    <%= link_to 'Destroy', dtest, method: :delete, data: { confirm: 'Are you sure?' } %> || 
-    <%= link_to 'Add_quest', new_dtest_dquestion_path(dtest) %>
+    <td><%= link_to t(:show), dtest %> |
+    <%= link_to t(:edit), edit_dtest_path(dtest) %> |
+    <%= link_to t(:delete), dtest, method: :delete, data: { confirm: 'Are you sure?' } %> ||
+    <%= link_to t(:add_quest), new_dtest_dquestion_path(dtest) %>
   </td>
   </tr>
 <% end %>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New Dtest', new_dtest_path %>
+<%= link_to t(:n_test), new_dtest_path, class: "btn btn-large" %>

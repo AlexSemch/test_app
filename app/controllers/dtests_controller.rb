@@ -42,7 +42,7 @@ class DtestsController < ApplicationController
 
     respond_to do |format|
       if @dtest.save
-        format.html { redirect_to @dtest, notice: 'Dtest was successfully created.' }
+        format.html { redirect_to @dtest, notice: t(:notise_test) }
         format.json { render json: @dtest, status: :created, location: @dtest }
       else
         format.html { render action: "new" }
@@ -75,7 +75,7 @@ class DtestsController < ApplicationController
 
     respond_to do |format|
       if @dtest.update_attributes(params[:dtest])
-        format.html { redirect_to @dtest, notice: 'Dtest was successfully updated.' }
+        format.html { redirect_to @dtest, notice: t(:upd_test)}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -91,7 +91,7 @@ class DtestsController < ApplicationController
     @dtest.destroy
 
     respond_to do |format|
-      format.html { redirect_to dtests_url }
+      format.html { redirect_to dtests_url, notice: t(:dest_test) }
       format.json { head :no_content }
     end
   end
