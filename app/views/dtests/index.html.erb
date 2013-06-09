@@ -11,7 +11,7 @@
   </tr>
 
 <% @dtests.each do |dtest| %>
-  <tr>
+  <tr id="tr_t<%= dtest.id %>">
     <td><%== dtest.test_name %></td>
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>

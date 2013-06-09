@@ -1,5 +1,5 @@
 <div id="new_dquest_form">
-<%= form_for([@dtest, @dquestion], remote: true) do |f| %>
+<%= form_for([@dtest, @dquestion]) do |f| %>
   <% if @dquestion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@dquestion.errors.count, "error") %> prohibited this dquestion from being saved:</h2>
