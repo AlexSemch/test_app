@@ -19,6 +19,7 @@ class DquestionsController < ApplicationController
   def show
    
     @dquestion = Dquestion.find(params[:id])
+    session[:quest_id] = @dquestion.id
 
     respond_to do |format|
       format.html # show.html.erb

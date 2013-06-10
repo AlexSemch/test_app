@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dquestion:</b>
+  <%= @danswer.dquestion_id %>
+</p>
+
+<p>
+  <b>Answer text:</b>
+  <%= @danswer.answer_text %>
+</p>
+
+<p>
+  <b>Ans is true:</b>
+  <%= @danswer.ans_is_true %>
+</p>
+
+
+<%= link_to 'Edit', edit_danswer_path(@danswer) %> |
+<%= link_to 'Back', danswers_path %>

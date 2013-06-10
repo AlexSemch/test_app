@@ -2,6 +2,9 @@ TestApp::Application.routes.draw do
 
 
 
+  resources :danswers
+
+
   #resources :dquestions
 
 

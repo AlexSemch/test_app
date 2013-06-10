@@ -17,4 +17,5 @@
 
 
 <%= link_to t(:edit), [:edit, @dtest, @dquestion] %> |
-<%= link_to t(:back),  dtest_dquestions_url(@dtest.id, @dquestions) %>
+<%= link_to t(:back),  dtest_dquestions_url(@dtest.id, @dquestions) %>  <br />
+<%= link_to "answer", danswers_path, class: "btn btn-large" %>

@@ -1,0 +1,26 @@
+<%= form_for(@danswer) do |f| %>
+  <% if @danswer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@danswer.errors.count, "error") %> prohibited this danswer from being saved:</h2>
+
+      <ul>
+      <% @danswer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :answer_text %><br />
+    <%= f.text_area :answer_text %> <br />
+  </div>
+  <div class="field">
+    <%= f.label :ans_is_true %><br />
+    <%= f.check_box :ans_is_true %> <br />
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
