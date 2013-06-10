@@ -12,7 +12,7 @@
 
 <% @dtests.each do |dtest| %>
   <tr id="tr_t<%= dtest.id %>">
-    <td><%== dtest.test_name %></td>
+    <td><a href="<%= dtest_path(dtest) %>"> <%== dtest.test_name %></a> </td>
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>
     <td><%= dtest.test_descr %></td>
