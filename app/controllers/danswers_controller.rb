@@ -45,8 +45,8 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       if @danswer.save
-        format.html { redirect_to @danswer, notice: 'Danswer was successfully created.' }
-        format.json { render json: @danswer, status: :created, location: @danswer }
+        format.html { redirect_to danswers_path, notice: 'Danswer was successfully created.' }
+        #format.json { render json: @danswer, status: :created, location: @danswer }
       else
         format.html { render action: "new" }
         format.json { render json: @danswer.errors, status: :unprocessable_entity }

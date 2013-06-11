@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20130609081557) do
 
   add_index "danswers", ["dquestion_id"], :name => "index_danswers_on_dquestion_id"
 
+  create_table "dic_questions", :force => true do |t|
+    t.integer  "test_id"
+    t.text     "question_text"
+    t.integer  "count_answer"
+    t.string   "img_adres"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "dic_tests", :force => true do |t|
     t.string   "test_name"
     t.integer  "count_of_test"

@@ -10,17 +10,26 @@
       </ul>
     </div>
   <% end %>
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function() {
+        new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('danswer_answer_text');
 
+    });
+    //]]>
+</script>
+    <table border="0px" style="width: 100%">
+      <tr>
+        <th><%= t(:is_true) %></th>
+        <th><%= t(:answer_text) %></th>
+      </tr>
+      <tr>
+        <td><%= f.check_box :ans_is_true %></td>
+        <td><%= f.text_area :answer_text %></td>
+      </tr>
 
-  <div class="field">
-    <%= f.label :answer_text %><br />
-    <%= f.text_area :answer_text %> <br />
-  </div>
-  <div class="field">
-    <%= f.label :ans_is_true %><br />
-    <%= f.check_box :ans_is_true %> <br />
-  </div>
-  <div class="actions">
+    </table>
+  <div class="actions" style="text-align: center">
     <%= f.submit %>
   </div>
 <% end %>
