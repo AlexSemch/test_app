@@ -15,5 +15,5 @@ class Danswer < ActiveRecord::Base
 
   belongs_to :dquestion, :class_name => "Dquestion", :foreign_key => "dquestion_id"
 
-  validates :ans_is_true, :answer_text, presence: true
+  validates :answer_text, presence: true
 end
