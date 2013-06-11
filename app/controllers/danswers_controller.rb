@@ -5,10 +5,6 @@ class DanswersController < ApplicationController
   def index
     @danswers = Danswer.where(:dquestion_id => @question.id)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @danswers }
-    end
   end
 
   # GET /danswers/1
@@ -16,10 +12,7 @@ class DanswersController < ApplicationController
   def show
     @danswer = Danswer.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @danswer }
-    end
+   
   end
 
   # GET /danswers/new
@@ -27,10 +20,6 @@ class DanswersController < ApplicationController
   def new
     @danswer = Danswer.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @danswer }
-    end
   end
 
   # GET /danswers/1/edit
@@ -49,7 +38,7 @@ class DanswersController < ApplicationController
         #format.json { render json: @danswer, status: :created, location: @danswer }
       else
         format.html { render action: "new" }
-        format.json { render json: @danswer.errors, status: :unprocessable_entity }
+       # format.json { render json: @danswer.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,10 +51,10 @@ class DanswersController < ApplicationController
     respond_to do |format|
       if @danswer.update_attributes(params[:danswer])
         format.html { redirect_to @danswer, notice: 'Danswer was successfully updated.' }
-        format.json { head :no_content }
+        #format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @danswer.errors, status: :unprocessable_entity }
+      # format.json { render json: @danswer.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,7 +67,7 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to danswers_url }
-      format.json { head :no_content }
+     # format.json { head :no_content }
     end
   end
 

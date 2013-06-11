@@ -31,6 +31,8 @@ group :assets do
 end
 
 gem 'jquery-rails', '2.0.2'
+#gem 'pjax_rails'
+gem 'rack-pjax'
 
 group :development do
   gem 'annotate', '2.5.0'

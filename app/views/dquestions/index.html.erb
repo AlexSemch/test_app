@@ -11,7 +11,8 @@
   </tr>
 
 <% @dquestions.each do |dquestion| %>
-  <tr id="<%= 'tr' + dquestion.id.to_s %>">
+  <div class="dquestion">
+    <tr id="<%= 'tr' + dquestion.id.to_s %>">
     <td><a href="<%= dtest_dquestion_path(@dtest,dquestion) %>"><%== dquestion.question_text %></a> </td>
     <td><%= dquestion.count_answer %></td>
     <td><%= link_to t(:show), [@dtest, dquestion] %> ||
@@ -19,6 +20,7 @@
     <%= link_to t(:delete), [@dtest, dquestion], method: :delete, data: { confirm: t(:Y_sure) }%>
   </td>
   </tr>
+  </div>
 <% end %>
 </table>
 </div>
