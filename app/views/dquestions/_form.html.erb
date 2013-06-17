@@ -11,17 +11,15 @@
       </ul>
     </div>
   <% end %>
-<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-//<![CDATA[
-  bkLib.onDomLoaded(function() {
-        new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('dquestion_question_text');
-        
-  });
-  //]]>
-  </script>
+
   <div class="field">
     <%= f.label t(:question_text) %><br />
-    <%= f.text_area :question_text %>
+    <%= f.cktext_area :question_text, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
+            { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+            { name: 'styles' },
+            { name: 'colors' }
+    ]} %>
   </div>
   <div class="field">
     <%= f.label t(:count_answer) %><br />

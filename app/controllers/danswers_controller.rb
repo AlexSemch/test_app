@@ -35,6 +35,7 @@ class DanswersController < ApplicationController
     respond_to do |format|
       if @danswer.save
         format.html { redirect_to danswers_path, notice: 'Danswer was successfully created.' }
+        format.js
         #format.json { render json: @danswer, status: :created, location: @danswer }
       else
         format.html { render action: "new" }
@@ -50,7 +51,8 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       if @danswer.update_attributes(params[:danswer])
-        format.html { redirect_to @danswer, notice: 'Danswer was successfully updated.' }
+        format.html { redirect_to danswers_path, notice: 'Danswer was successfully updated.' }
+        format.js
         #format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -67,6 +69,7 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to danswers_url }
+      format.js
      # format.json { head :no_content }
     end
   end

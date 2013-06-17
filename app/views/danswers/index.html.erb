@@ -1,31 +1,8 @@
 <h1><%== @question.question_text  %></h1>
 
-<table>
-  <tr>
-    <th>Answer text</th>
-    <th>Ans is true</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-    //<![CDATA[
-    bkLib.onDomLoaded(function() {
-        new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('danswer_answer_text');
-
-    });
-    //]]>
-    </script>
-<% @danswers.each do |danswer| %>
-  <tr>
-    <td><%= danswer.answer_text %></td>
-    <td><%= danswer.ans_is_true %></td>
-    <td><%= link_to 'Show', danswer %></td>
-    <td><%= link_to 'Edit', edit_danswer_path(danswer) %></td>
-    <td><%= link_to 'Destroy', danswer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div id="danswer_list">
+  <%= render @danswers %>
+</div>
 
 <br />
 
