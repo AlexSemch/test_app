@@ -1,14 +1,15 @@
 class DanswersController < ApplicationController
   before_filter :get_quest
+
   # GET /danswers
-  # GET /danswers.json
+
   def index
     @danswers = Danswer.where(:dquestion_id => @question.id)
 
   end
 
   # GET /danswers/1
-  # GET /danswers/1.json
+
   def show
     @danswer = Danswer.find(params[:id])
 
@@ -16,7 +17,7 @@ class DanswersController < ApplicationController
   end
 
   # GET /danswers/new
-  # GET /danswers/new.json
+
   def new
     @danswer = Danswer.new
 
@@ -28,7 +29,7 @@ class DanswersController < ApplicationController
   end
 
   # POST /danswers
-  # POST /danswers.json
+
   def create
     @danswer = @question.danswers.new(params[:danswer])
 
@@ -45,7 +46,7 @@ class DanswersController < ApplicationController
   end
 
   # PUT /danswers/1
-  # PUT /danswers/1.json
+
   def update
     @danswer = Danswer.find(params[:id])
 
@@ -53,10 +54,8 @@ class DanswersController < ApplicationController
       if @danswer.update_attributes(params[:danswer])
         format.html { redirect_to danswers_path, notice: 'Danswer was successfully updated.' }
         format.js
-        #format.json { head :no_content }
       else
         format.html { render action: "edit" }
-      # format.json { render json: @danswer.errors, status: :unprocessable_entity }
       end
     end
   end
