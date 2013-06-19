@@ -51,8 +51,8 @@ class DquestionsController < ApplicationController
     respond_to do |format|
       if @dquestion.save  
         
-        format.html { redirect_to dtest_dquestion_url(@dtest, @dquestion) }
-        #format.js
+        format.html { redirect_to dtest_dquestions_url(@dtest) }
+        format.js
       else
        
         format.html { redirect_to dtests_url }
@@ -88,7 +88,7 @@ class DquestionsController < ApplicationController
     respond_to do |format|
       
         format.html { redirect_to dtest_dquestions_url(@dtest) }
-      #  format.js
+        format.js
     end
   end
 

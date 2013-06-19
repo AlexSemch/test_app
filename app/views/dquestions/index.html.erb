@@ -1,30 +1,16 @@
 <h1><%= t(:list_quest) %></h1>
 
 <%= link_to '<< '+ t(:b_tests), dtests_path, class: "btn" %>  <br />
-<div id="index_dquest">
-<table class = "table table-striped">
+<table class = "table table-striped" id="index_dquest">
   <tr>
     <th><%= t(:question_text) %></th>
-    <th><%= t(:count_answer) %></th>
     <th></th>
     
   </tr>
-
-<% @dquestions.each do |dquestion| %>
-  <div class="dquestion">
-    <tr id="<%= 'tr' + dquestion.id.to_s %>">
-    <td><a href="<%= dtest_dquestion_path(@dtest,dquestion) %>"><%== dquestion.question_text %></a> </td>
-    <td><%= dquestion.count_answer %></td>
-    <td><%= link_to t(:show), [@dtest, dquestion] %> ||
-    <%= link_to t(:edit_quest), [:edit, @dtest, dquestion] %> ||
-    <%= link_to t(:delete), [@dtest, dquestion], method: :delete, data: { confirm: t(:Y_sure) }%>
-  </td>
-  </tr>
-  </div>
-<% end %>
+    <%= render :partial => @dquestions %>
 </table>
-</div>
+
 <br />
 
-<%= link_to t(:new_quest), new_dtest_dquestion_path(@dtest), id: "new_dquest"  %>
+<%= link_to t(:new_quest), new_dtest_dquestion_path(@dtest), id: "new_dquest", remote: true  %>
    

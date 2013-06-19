@@ -1,3 +1,7 @@
-<li id="sp_<%= dquestion.id %>"><%== dquestion.question_text %> <br/>
-  (<%= link_to 'Destroy', [@dtest, dquestion], method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>) <br/>  <br/>
-</li>
+<%= content_tag_for(:tr, dquestion) do %>
+    <td><a href="<%= dtest_dquestion_path(@dtest,dquestion) %>"><%==  dquestion.question_text %></a> </td>
+    <td><%= link_to t(:show), [@dtest, dquestion] %> ||
+      <%= link_to t(:edit_quest), [:edit, @dtest, dquestion] %> ||
+      <%= link_to t(:delete), [@dtest, dquestion], method: :delete, data: { confirm: t(:Y_sure) }, remote: true%>
+    </td>
+<% end %>
