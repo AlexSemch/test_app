@@ -1,3 +1,6 @@
-$('#edit_danswer').remove();
-$('#danswerform_<%= @danswer.id %>').show();
+$('#edit_danswer_<%= @danswer.id %>').remove();
+$('#edit_danswer_<%= @danswer.id %>').remove();
+$('#danswer_list').append('<%= j render(@danswer) %>');
+
+
 
