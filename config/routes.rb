@@ -2,6 +2,8 @@ TestApp::Application.routes.draw do
 
 
 
+  get "jtests/new"
+
   resources :danswers
 
 
