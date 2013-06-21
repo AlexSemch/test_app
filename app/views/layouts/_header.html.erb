@@ -9,6 +9,7 @@
         <ul class="nav pull-right">
           <li><%= link_to t(:home), root_path %></li>
           <% if signed_in? %>
+              <li><%= link_to '!!!!TEST!!!!', new_protests_path %></li>
                <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <%= t :tests %> <b class="caret"></b>

@@ -1,6 +1,7 @@
 TestApp::Application.routes.draw do
 
 
+ get "protests/new" => "protests#new"
 
   get "jtests/new"
 
