@@ -1,9 +1,10 @@
 TestApp::Application.routes.draw do
 
 
- get "protests/new" => "protests#new"
+  match '/ball',    to: 'jtests#end_of_test'
 
-  get "jtests/new"
+ resources :jtests, :jquestions, :janswers
+
 
   resources :danswers
 

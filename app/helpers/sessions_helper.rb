@@ -16,7 +16,11 @@ module SessionsHelper
 
   def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
-  end 
+  end
+
+  def current_student
+    @current_student = Student.find_by_user_id(current_user.id)
+  end
   
   def current_user?(user)
     user == current_user

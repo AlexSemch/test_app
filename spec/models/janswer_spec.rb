@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: danswers
+# Table name: janswers
 #
 #  id           :integer          not null, primary key
-#  dquestion_id :integer
-#  answer_text  :text
-#  ans_is_true  :boolean          default(FALSE)
+#  jquestion_id :integer
+#  danswer_id   :integer
+#  truanswer    :boolean          default(FALSE)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
 require 'spec_helper'
 
-describe Danswer do
+describe Janswer do
   pending "add some examples to (or delete) #{__FILE__}"
 end

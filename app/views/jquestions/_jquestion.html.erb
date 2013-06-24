@@ -1,0 +1,9 @@
+<%= form_for jquestion do |f| %>
+    <%== (Dquestion.find(jquestion.dquestion_id)).question_text %>  </br>
+        <% (Janswer.where(jquestion_id: jquestion.id)).each do |a|  %>
+            <%== a.danswer_id %> </br>
+        <% end %>
+
+    <%= f.submit %>
+    </br></br>
+<% end %>

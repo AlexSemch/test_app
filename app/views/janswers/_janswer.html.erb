@@ -1,0 +1,3 @@
+<%= form_for(janswer, remote: true) do |f| %>
+    <%= f.check_box :truanswer %> <%== (Danswer.find(janswer.danswer_id)).answer_text  %>
+<% end %>

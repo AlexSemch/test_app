@@ -5,7 +5,7 @@
 #  id           :integer          not null, primary key
 #  dquestion_id :integer
 #  answer_text  :text
-#  ans_is_true  :boolean
+#  ans_is_true  :boolean          default(FALSE)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

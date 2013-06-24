@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609081557) do
+ActiveRecord::Schema.define(:version => 20130624111134) do
 
   create_table "danswers", :force => true do |t|
     t.integer  "dquestion_id"
@@ -22,24 +22,6 @@ ActiveRecord::Schema.define(:version => 20130609081557) do
   end
 
   add_index "danswers", ["dquestion_id"], :name => "index_danswers_on_dquestion_id"
-
-  create_table "dic_questions", :force => true do |t|
-    t.integer  "test_id"
-    t.text     "question_text"
-    t.integer  "count_answer"
-    t.string   "img_adres"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
-
-  create_table "dic_tests", :force => true do |t|
-    t.string   "test_name"
-    t.integer  "count_of_test"
-    t.integer  "time_to_exec"
-    t.text     "descr_test"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
 
   create_table "dquestions", :force => true do |t|
     t.text     "question_text"
@@ -61,6 +43,34 @@ ActiveRecord::Schema.define(:version => 20130609081557) do
   end
 
   add_index "dtests", ["test_name"], :name => "index_dtests_on_test_name"
+
+  create_table "janswers", :force => true do |t|
+    t.integer  "jquestion_id"
+    t.integer  "danswer_id"
+    t.boolean  "truanswer",    :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "jquestions", :force => true do |t|
+    t.integer  "jtest_id"
+    t.integer  "dquestion_id"
+    t.boolean  "truanswer",    :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "jtests", :force => true do |t|
+    t.integer  "dtest_id"
+    t.integer  "student_id"
+    t.time     "begin_time"
+    t.time     "end_time"
+    t.float    "ball"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "jtests", ["student_id"], :name => "index_jtests_on_student_id"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"

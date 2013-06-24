@@ -25,3 +25,6 @@ ua:
   student: "Учні"
   show: "Показати"
   back: "Повернутися"
+  will_paginate:
+      next_label: "Далі"
+      previous_label: "Назад"
