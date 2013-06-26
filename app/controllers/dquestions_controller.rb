@@ -1,6 +1,7 @@
 class DquestionsController < ApplicationController
   before_filter :fdtest
-
+  before_filter :signed_in_user
+  
   # GET /dquestions
   # GET /dquestions.json
   

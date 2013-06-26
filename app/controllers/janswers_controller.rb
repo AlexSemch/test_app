@@ -1,5 +1,5 @@
 class JanswersController < ApplicationController
-
+before_filter :signed_in_user
 
   def update
     @janswer = Janswer.find(params[:id])

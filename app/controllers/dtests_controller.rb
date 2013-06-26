@@ -1,4 +1,6 @@
 class DtestsController < ApplicationController
+  before_filter :signed_in_user
+  
   # GET /dtests
   # GET /dtests.json
   def index

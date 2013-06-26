@@ -1,5 +1,7 @@
 class DanswersController < ApplicationController
   before_filter :get_quest
+  before_filter :signed_in_user
+  
 
   # GET /danswers
 

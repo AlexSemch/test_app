@@ -14,4 +14,5 @@ class Jquestion < ActiveRecord::Base
   attr_accessible :dquestion_id, :jtest_id
   belongs_to :jtest, :class_name => "Jtest", :foreign_key => "jtest_id"
   has_many :janswers
+  self.per_page = 1
 end

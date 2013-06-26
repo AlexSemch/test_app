@@ -1,3 +1,4 @@
+<%= will_paginate  %>
 <% @jquestions.each do |jquestion| %>
     <h2><%== (Dquestion.find(jquestion.dquestion_id)).question_text %> </h2> </br>
         <%= render (Janswer.where(jquestion_id: jquestion.id)) %>
@@ -6,7 +7,7 @@
 
 
 <% end %>
-
+<%= will_paginate  %>
 <%= link_to t(:finish_test), ball_path, class: "btn btn-large" %>
 
 
