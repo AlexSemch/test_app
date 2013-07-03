@@ -8,6 +8,8 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(params[:student])
+    @student.round_ball = 0.0
+    @student.count_of_test = 0
     if @student.save
       flash[:success] = t(:student_save)
       redirect_to @student

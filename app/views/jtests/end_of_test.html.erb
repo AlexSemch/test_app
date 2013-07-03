@@ -1,3 +1,4 @@
 <h1>Шановний <%= @student.first_name %> <%= @student.name %> <%= @student.second_name %></h1>
 <h2>Ваш бал за данний тест: <%= @jtest.ball %></h2>
-<%= @jtest.begin_time %>  -  <%= @jtest.end_time %>
+<%= @jtest.begin_time.to_formatted_s(:time) %>  -  <%= @jtest.end_time.to_formatted_s(:time) %>
+Round ball: <%= @student.round_ball %>

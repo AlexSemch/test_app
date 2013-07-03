@@ -1,13 +1,38 @@
-<%= will_paginate  %>
+
+  
+ <script src="assets/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('#counter').countdown({
+          image: 'assets/digits.png',
+          startTime: '<%= @dtest.time_exec %>:00',
+          timerEnd: function(){ document.location.replace("<%= ball_path %>"); },
+          format: 'mm:ss'
+        });
+      });
+    </script>
+   
+<div id="counter" ></div>
+	
+
+
+<div data-pjax-container>
+
 <% @jquestions.each do |jquestion| %>
     <h2><%== (Dquestion.find(jquestion.dquestion_id)).question_text %> </h2> </br>
         <%= render (Janswer.where(jquestion_id: jquestion.id)) %>
 
-</br>
+    </br>
 
 
 <% end %>
-<%= will_paginate  %>
-<%= link_to t(:finish_test), ball_path, class: "btn btn-large" %>
+<%= will_paginate %>
+
+</div>  
+
+
+<%= link_to t(:finish_test), ball_path, class: "btn btn-large", id: "end_test" %>
+
+
 
 

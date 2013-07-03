@@ -1,0 +1,14 @@
+<%= select_tag :select_dtest,options_from_collection_for_select(@dtest, :id, :test_name), id: :sel_dtest,:prompt => "Select something" %>
+
+  <% @jtests.each do |jtest| %>
+
+
+    <div class="jt_ jt_<%= jtest.dtest_id %>">
+    <%= jtest.dtest_id %>  <%= jtest.begin_time %>
+    </div>
+
+  <% end %>
+
+
+
+

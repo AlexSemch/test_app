@@ -13,7 +13,14 @@ module StudentsHelper
     end
   end
 
-
+  def calc_round_ball(id)
+    a = 0
+    @student = Student.find(id)
+    @student.round_ball =  ("select  sum(j.ball)/count(j.id) as round_ball
+    from jtests j
+    where j.student_id = 18 and
+        j.ball is not null")
+  end
 
 
 end

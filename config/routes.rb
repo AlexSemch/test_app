@@ -1,9 +1,8 @@
-TestApp::Application.routes.draw do
+TestApp::Application.routes.draw {
 
-
-  match '/ball',    to: 'jtests#end_of_test'
-
- resources :jtests, :jquestions, :janswers
+  match '/ball', to: 'jtests#end_of_test'
+  post '/jtests/index_detal'
+  resources :jtests, :jquestions, :janswers
 
 
   resources :danswers
@@ -22,7 +21,6 @@ TestApp::Application.routes.draw do
   #put "students#add_to_user"
 
 
-
   resources :users do
     member do
       get :following, :followers
@@ -30,20 +28,20 @@ TestApp::Application.routes.draw do
   end
   resources :students do
 
-      put :add_to_user
-      put :remote_from_user
+    put :add_to_user
+    put :remote_from_user
 
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  match '/help',    to: 'static_pages#help'
-  match '/about',   to: 'static_pages#about'
+  match '/help', to: 'static_pages#help'
+  match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
   root to: 'static_pages#home'
   # The priority is based upon order of creation:
@@ -102,4 +100,4 @@ TestApp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
+}
