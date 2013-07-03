@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require history
 //= require bootstrap
 //= require ckeditor/init
 //= require jquery.pjax
+//= require ajax_pagination
 //= require bootstrap-datepicker
 //= require_tree .

@@ -37,6 +37,8 @@ gem 'jquery-rails', '2.0.2'
 gem "ckeditor"
 #gem 'pjax_rails'
 gem 'rack-pjax'
+gem 'ajax_pagination'
+gem "jquery-historyjs"
 
 group :development do
   gem 'annotate', '2.5.0'

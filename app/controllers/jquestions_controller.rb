@@ -13,6 +13,10 @@ before_filter :signed_in_user
       redirect_to ball_path
     else
       @jquestions = Jquestion.where(:jtest_id => @jtest.id).paginate(page: params[:page])
+      respond_to do |format|
+        format.html # index.html.erb
+        ajax_respond format, :section_id => "page"
+      end
     end
   # session[:test_started] = 1;
   #@jquestions = Jquestion.where(:jtest_id => @jtest.id).paginate(page: params[:page])
