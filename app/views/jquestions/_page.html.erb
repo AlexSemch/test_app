@@ -1,11 +1,10 @@
 <%= ajax_links :section_id => "page" do %>
-<%= will_paginate @jquestions %>
+	<%= will_paginate @jquestions %>
 <% end %>
 <%= ajax_loadzone do %>
 	<% @jquestions.each do |jquestion| %>
     <h2><%== (Dquestion.find(jquestion.dquestion_id)).question_text %> </h2> </br>
-        <%= render (Janswer.where(jquestion_id: jquestion.id)) %>
-
+      	<%= render (Janswer.where(jquestion_id: jquestion.id)) %>
     </br>
 
 

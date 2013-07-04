@@ -42,7 +42,7 @@
                 </ul>
               </li>
               <% else %>
-              <li><%= link_to t(:sign_in), signin_path %></li>
+              <li><a href="#myModal"  data-toggle="modal"><%= t(:sign_in) %></a></li>
             <% end %>
           <li><%= link_to image_tag('ua.png'),  request.fullpath.split("?")[0].insert(-1,"?locale=ua")  %></li>
           <li><%= link_to image_tag('gb.png'),  request.fullpath.split("?")[0].insert(-1,"?locale=en")  %></li>
@@ -53,3 +53,30 @@
     </div>
   </div>
 </header>
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+   <h1>Sign in</h1>
+    </div>
+  <div class="modal-body">
+     
+        <%= form_for(:session, url: sessions_path) do |f| %>
+
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+      
+
+  </div>
+  <div class="modal-footer">
+    <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+  </div>
+  <% end %>
+</div>
+
+
+
