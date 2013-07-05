@@ -1,4 +1,4 @@
 <%= form_for @jtest do |f| %>
-    <%= f.select :dtest_id, options_from_collection_for_select(@test_sel, :id, :test_name) %>
+    <%= f.select :dtest_id, options_from_collection_for_select(@test_sel, :id,  h(:test_name))%>
     <%= f.submit :test_go %>
 <% end %>

@@ -1,17 +1,14 @@
-
-  
- <script src="assets/jquery.countdown.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(function(){
         $('#counter').countdown({
           image: 'assets/digits.png',
-          startTime: '<%= @dtest.time_exec %>:00',
+          startTime: '<%= @tte %>',
           timerEnd: function(){ document.location.replace("<%= ball_path %>"); },
           format: 'mm:ss'
         });
       });
     </script>
-<div class="row-fluid">     
+<div class="row-fluid" >
 <div id="counter" class = "span4 offset4" ></div>
 	
 <div class="span6 offset3">
@@ -21,6 +18,7 @@
 
 <div class="span4 offset4">
   <%= link_to t(:finish_test), ball_path, class: "btn btn-large btn-inverse", id: "end_test" %>
+
 </div>
 </div>
 
