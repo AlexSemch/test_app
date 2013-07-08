@@ -9,16 +9,21 @@
  </head>
  <body >
      <%= render 'layouts/header' %>
-    <div id="side">
-         <%= yield :right_side %>
-    </div>
- <div class="container">
+
+ <div class="container-fluid">
    <% flash.each do |key, value| %>
        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
-       <% end %>
-
-        <%= yield %>
-
+   <% end %>
+   <div class="row-fluid">
+     <div class="span2">
+       <!--Sidebar content-->
+       <%= yield :side_bar %>
+     </div>
+     <div class="span10">
+       <!--Body content-->
+       <%= yield %>
+     </div>
+   </div>
     <%= render 'layouts/footer' %>
    <%= debug(params) if Rails.env.development? %>
  </div>

@@ -13,7 +13,7 @@
 #
 
 class Jtest < ActiveRecord::Base
-  attr_accessible :ball, :begin_time, :dtest_id, :end_time, :student_id
+  attr_accessible :dtest_id
   belongs_to :dtest, :class_name => "Dtest", :foreign_key => "dtest_id"
   belongs_to :student, :class_name => "Student", :foreign_key => "student_id"
   has_many :jquestions
