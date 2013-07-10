@@ -12,9 +12,10 @@
 #
 
 class Dtest < ActiveRecord::Base
-  attr_accessible :count_test, :test_descr, :test_name, :time_exec
+  attr_accessible :count_test, :test_descr, :test_name, :time_exec, :dthem_id
   has_many :dquestions
   has_many :jtests
+  belongs_to :dthem, :class_name => "Dthem", :foreign_key => "dthem_id"
 
   validates :test_name, :time_exec, :count_test, presence: true
 end

@@ -1,6 +1,6 @@
 class DtestsController < ApplicationController
   before_filter :signed_in_user
-  
+  before_filter :all_dthem
   # GET /dtests
   # GET /dtests.json
   def index
@@ -28,6 +28,7 @@ class DtestsController < ApplicationController
   # GET /dtests/new.json
   def new
     @dtest = Dtest.new
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -97,4 +98,9 @@ class DtestsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def all_dthem
+    @dthems = Dthem.all
+  end
+
 end

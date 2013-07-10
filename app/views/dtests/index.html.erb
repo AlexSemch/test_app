@@ -1,5 +1,7 @@
 <h1><%= t(:list_test) %></h1>
 
+<%= select_tag :dthem, options_from_collection_for_select( @dthems, :id, :them_text), id: :select_dthem, :prompt => "All"  %>
+
 <table class = "table table-striped">
   <tr>
     <th><%= t(:test_name) %></th>
@@ -11,7 +13,7 @@
   </tr>
 
 <% @dtests.each do |dtest| %>
-  <tr id="tr_t<%= dtest.id %>">
+  <tr class="dthem dthem<%= dtest.dthem_id %>">
     <td><a href="<%= dtest_path(dtest) %>"> <%== dtest.test_name %></a> </td>
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624111134) do
+ActiveRecord::Schema.define(:version => 20130708174559) do
 
   create_table "danswers", :force => true do |t|
     t.integer  "dquestion_id"
@@ -40,9 +40,19 @@ ActiveRecord::Schema.define(:version => 20130624111134) do
     t.text     "test_descr"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.integer  "dthem_id"
   end
 
   add_index "dtests", ["test_name"], :name => "index_dtests_on_test_name"
+
+  create_table "dthems", :force => true do |t|
+    t.integer  "class_st"
+    t.text     "them_text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "dthems", ["them_text"], :name => "index_dthems_on_them_text"
 
   create_table "janswers", :force => true do |t|
     t.integer  "jquestion_id"

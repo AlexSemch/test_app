@@ -1,10 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-   jQuery ->
-     $('#sel_dtest').change ->
-      $('.jt_').hide()
-      $('.jt_'+ $('#sel_dtest :selected').val()).show()
-      # $('#testj').html(executeSql("select * from jtest where dtest_id = 22"))
-      #alert($('#sel_dtest :selected').val())
-       #alert(executeSql("select * from jtest where dtest_id = 22"))
+jQuery ->
+  dtests = $('#jtest_dtest_id').html()
+  $('#dthem_id').change ->
+    dthem = $('#dthem_id :selected').text()
+    options = $(dtests).filter("optgroup[label='#{dthem}']").html()
+    if options
+      $('#jtest_dtest_id').html(options)
+    else
+      $('#jtest_dtest_id').empty()

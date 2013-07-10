@@ -2,7 +2,7 @@ TestApp::Application.routes.draw {
 
   match '/ball', to: 'jtests#end_of_test'
   post '/jtests/index_detal'
-  resources :jtests, :jquestions, :janswers
+  resources :jtests, :jquestions, :janswers, :dthems
 
 
   resources :danswers

@@ -14,6 +14,9 @@ before_filter :signed_in_user
 def new
     @jtest= Jtest.new
     @test_sel = Dtest.all
+    respond_to do |format|
+      format.html
+    end 
   end
 
   def create

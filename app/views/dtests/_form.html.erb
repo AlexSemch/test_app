@@ -1,40 +1,41 @@
 <%= form_for(@dtest) do |f| %>
-  <% if @dtest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@dtest.errors.count, "error") %> prohibited this dtest from being saved:</h2>
+    <% if @dtest.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@dtest.errors.count, "error") %> prohibited this dtest from being saved:</h2>
 
-      <ul>
-      <% @dtest.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @dtest.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.select :dthem_id, options_from_collection_for_select( @dthems, :id, :them_text) %>
+
+    <div class="field">
+      <%= f.label t(:test_name) %><br />
+      <%= f.cktext_area :test_name, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
+              { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+              { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+              { name: 'styles' },
+              { name: 'colors' }
+      ]} %><br />
     </div>
-  <% end %>
 
-
-  <div class="field">
-    <%= f.label t(:test_name) %><br />
-    <%= f.cktext_area :test_name, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
-            { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-            { name: 'styles' },
-            { name: 'colors' }
-    ]} %><br />
-  </div>
-
-  <div class="field">
-    <%= f.label t(:count_test) %><br />
-    <%= f.number_field :count_test %><br />
-  </div>
-  <div class="field">
-    <%= f.label t(:time_exec) %><br />
-    <%= f.number_field :time_exec %><br />
-  </div>
-  <div class="field">
-    <%= f.label t(:test_descr) %><br />
-    <%= f.text_area :test_descr %><br />
-  </div>
-  <div class="action">
-    <%= f.submit  options={ :class => "btn btn-inverse"}%>
-  </div>
+    <div class="field">
+      <%= f.label t(:count_test) %><br />
+      <%= f.number_field :count_test %><br />
+    </div>
+    <div class="field">
+      <%= f.label t(:time_exec) %><br />
+      <%= f.number_field :time_exec %><br />
+    </div>
+    <div class="field">
+      <%= f.label t(:test_descr) %><br />
+      <%= f.text_area :test_descr %><br />
+    </div>
+    <div class="action">
+      <%= f.submit  options={ :class => "btn btn-inverse"}%>
+    </div>
 <% end %>
