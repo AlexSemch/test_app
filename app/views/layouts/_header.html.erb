@@ -10,28 +10,16 @@
           <li><%= link_to t(:home), root_path %></li>
           <% if signed_in? %>
               <li><%= link_to '!!!!TEST!!!!', new_jtest_path %></li>
-               <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <%= t :tests %> <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu">
-                  
-                  <li><%= link_to t(:tests), dtests_path %></li>
-                  <li><%= link_to t(:n_test), new_dtest_path %></li>
-                </ul>
-              </li>
+               
 
            
 
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <%= t :account %> <b class="caret"></b>
+                  <%= current_user.nik %> <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  
-                  <li><%= link_to t(:students), students_path %></li>
-                  <li><%= link_to t(:top_student), students_top_students_path %></li>
-                  <li class="divider"></li>
+                          
                   <li><%= link_to t(:users), users_path %></li>
                   <li><%= link_to t(:profile), current_user %></li>
                   <li><%= link_to t(:settings), edit_user_path(current_user) %></li>

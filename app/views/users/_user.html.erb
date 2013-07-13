@@ -2,8 +2,9 @@
   <%= gravatar_for user, size: 52 %>
   <%= link_to user.nik, user %>
   <% if current_user.admin? && !current_user?(user) %>
-     | <%= link_to t(:delete), user, method: :delete,
-                                  data: { confirm: t(:Y_sure) } %>
+     | <%= link_to t(:delete), user, method: :delete, data: { confirm: t(:Y_sure) } %>
+     | <%= link_to :teacher, 'users/'+user.id.to_s+'/make_teacher', method: :put %>
+
   <% end %>
 </li>
 

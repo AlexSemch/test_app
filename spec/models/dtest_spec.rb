@@ -9,6 +9,7 @@
 #  test_descr :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  dthem_id   :integer
 #
 
 require 'spec_helper'

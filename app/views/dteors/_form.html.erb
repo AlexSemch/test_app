@@ -1,0 +1,13 @@
+<%= simple_form_for(@dteor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.cktext_area :teor_text %>
+    <%= f.association :dthem, label_method: :them_text, value_method: :id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -27,10 +27,10 @@ class DthemsController < ApplicationController
   def new
     @dthem = Dthem.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @dthem }
-    end
+    #respond_to do |format|
+     # format.html # new.html.erb
+     # format.json { render json: @dthem }
+    #end
   end
 
   # GET /dthems/1/edit
@@ -45,8 +45,9 @@ class DthemsController < ApplicationController
 
     respond_to do |format|
       if @dthem.save
-        format.html { redirect_to @dthem, notice: 'Dthem was successfully created.' }
-        format.json { render json: @dthem, status: :created, location: @dthem }
+        format.html { redirect_to dthems_path, notice: 'Dthem was successfully created.' }
+        #format.json { render json: @dthem, status: :created, location: @dthem }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @dthem.errors, status: :unprocessable_entity }
@@ -77,8 +78,8 @@ class DthemsController < ApplicationController
     @dthem.destroy
 
     respond_to do |format|
-      format.html { redirect_to dthems_url }
-      format.json { head :no_content }
+    format.html { redirect_to dthems_url }
+    format.js
     end
   end
 end

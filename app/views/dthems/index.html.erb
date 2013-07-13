@@ -1,6 +1,6 @@
 <h1>Listing dthems</h1>
 
-<table>
+<table id="index_dtem">
   <tr>
     <th>Class st</th>
     <th>Them text</th>
@@ -9,17 +9,9 @@
     <th></th>
   </tr>
 
-<% @dthems.each do |dthem| %>
-  <tr>
-    <td><%= dthem.class_st %></td>
-    <td><%= dthem.them_text %></td>
-    <td><%= link_to 'Show', dthem %></td>
-    <td><%= link_to 'Edit', edit_dthem_path(dthem) %></td>
-    <td><%= link_to 'Destroy', dthem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <%= render :partial => @dthems %>
 </table>
 
 <br />
 
-<%= link_to 'New Dthem', new_dthem_path %>
+<%= link_to 'New Dthem', new_dthem_path, remote: true, id: :new_tem %>

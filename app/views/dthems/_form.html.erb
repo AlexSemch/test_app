@@ -1,6 +1,11 @@
-<%= simple_form_for(@dthem) do |f| %>
+<%= simple_form_for(@dthem, remote: true) do |f| %>
   <%= f.error_notification %>
   <%= f.input :class_st, collection: 7..11 %>
-  <%= f.input :them_text %>
+  <%= f.cktext_area :them_text, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
+          { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+          { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+          { name: 'styles' },
+          { name: 'colors' }
+  ]} %>
   <%= f.button :submit %>
 <% end %>

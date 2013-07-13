@@ -15,9 +15,9 @@
        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
    <% end %>
    <div class="row-fluid">
-     <div class="span2">
+     <div class="span2 bs-docs-sidebar">
        <!--Sidebar content-->
-       <%= yield :side_bar %>
+    <%= render 'layouts/sidebar' %>   
      </div>
      <div class="span10">
        <!--Body content-->

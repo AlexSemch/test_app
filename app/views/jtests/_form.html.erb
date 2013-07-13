@@ -1,5 +1,5 @@
 <%= form_for @jtest do |f| %>
-    <%= select_tag :dthem_id, options_from_collection_for_select(Dthem.order(:them_text), :id, :them_text), include_blank: true %>
+    <%= select_tag :dthem_id, options_from_collection_for_select(@thems, :id, :them_text), include_blank: true %>
     <%= f.grouped_collection_select :dtest_id, Dthem.order(:them_text), :dtests, :them_text, :id, :test_name, include_blank: true %>
     <%= f.submit :test_go %>
 <% end %>

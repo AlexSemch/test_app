@@ -1,0 +1,17 @@
+<ul class="nav nav-list bs-docs-sidenav">
+          <% if signed_in? and (current_user.rol == 'teacher' or current_user.admin)%>
+          
+          <li><a href=<%=dteors_path %>><i class="icon-chevron-right"></i> Teories </a></li>
+          <li><a href=<%=dthems_path %>><i class="icon-chevron-right"></i> Thems </a></li>
+          <li><a href=<%=new_dthem_path %>><i class="icon-chevron-right"></i> New Thems </a></li>
+          <li><a href=<%=dtests_path %>><i class="icon-chevron-right"></i> <%= t(:tests)%></a></li>
+          <li><a href=<%=dtests_path %>><i class="icon-chevron-right"></i> <%= t(:n_test)%></a></li>
+          <li><a href=<%=jtests_path %>><i class="icon-chevron-right"></i> Resalt test</a></li>
+          <li class="divider"></li>
+          <li><a href=<%= students_path %>><i class="icon-chevron-right"></i> <%= t(:students)%></a></li>
+          <li><a href=<%= students_top_students_path %>><i class="icon-chevron-right"></i> <%= t(:top_student)%></a></li>
+
+                  
+          <% end %>
+                     
+</ul>

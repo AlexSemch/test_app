@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dteor.name %>
+</p>
+
+<p>
+  <b>Teor text:</b>
+  <%== @dteor.teor_text %>
+</p>
+
+<p>
+  <b>Dthem:</b>
+  <%= @dteor.dthem_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_dteor_path(@dteor) %> |
+<%= link_to 'Back', dteors_path %>

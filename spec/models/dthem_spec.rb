@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: dthems
+#
+#  id         :integer          not null, primary key
+#  class_st   :integer
+#  them_text  :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'spec_helper'
 
 describe Dthem do

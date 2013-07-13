@@ -1,0 +1,26 @@
+<h1>Listing dteors</h1>
+
+<%= select_tag :dthem, options_from_collection_for_select( @thems, :id, :them_text), id: :select_dthemm, :prompt => "All"  %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Dthem</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dteors.each do |dteor| %>
+  <tr class="dteor dteor<%= dteor.dthem_id %>">
+    <td><%= dteor.name %></td>
+    <td><%= dteor.dthem_id %></td>
+    <td><%= link_to 'Show', dteor %></td>
+    <td><%= link_to 'Edit', edit_dteor_path(dteor) %></td>
+    <td><%= link_to 'Destroy', dteor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dteor', new_dteor_path %>

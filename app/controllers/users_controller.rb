@@ -65,6 +65,8 @@ class UsersController < ApplicationController
     end
   end
 
+
+
    def make_betta
      ir = rand(1..5)
      redirect_to root_path

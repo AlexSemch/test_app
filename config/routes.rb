@@ -3,7 +3,7 @@ TestApp::Application.routes.draw {
   match '/ball', to: 'jtests#end_of_test'
   post '/jtests/index_detal'
   resources :jtests, :jquestions, :janswers, :dthems
-
+  resources :dteors 
 
   resources :danswers
 
@@ -17,7 +17,7 @@ TestApp::Application.routes.draw {
   end
   #get "dtests/add_questions"
 
-  get "students/top_students"
+  get 'students/top_students'
   #put "students#add_to_user"
 
 
@@ -25,6 +25,7 @@ TestApp::Application.routes.draw {
     member do
       get :following, :followers
     end
+   # put :make_teacher
   end
   resources :students do
 

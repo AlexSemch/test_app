@@ -1,5 +1,5 @@
 class JtestsController < ApplicationController
-include JtestsHelper
+include JtestsHelper, DthemsHelper
 before_filter :signed_in_user
 
   def index
@@ -13,10 +13,21 @@ before_filter :signed_in_user
 
 def new
     @jtest= Jtest.new
-    @test_sel = Dtest.all
+    if get_tem
+      @thems = get_tem  
+    end
+    
+    
+    #@test_sel = Dtest.all
     respond_to do |format|
-      format.html
+      if get_tem
+      format.html 
+    else
+      format.html {
+      flash[:notise] = 'Chouse student'
+      redirect_to students_path}
     end 
+  end
   end
 
   def create
