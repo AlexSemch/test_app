@@ -1,6 +1,7 @@
 class JquestionsController < ApplicationController
   before_filter :fin_test
-before_filter :signed_in_user
+  before_filter :signed_in_user
+  #filter_resource_access
   def show
     @jquestion = Jquestion.find(params[:id])
 

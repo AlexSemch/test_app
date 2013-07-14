@@ -1,6 +1,7 @@
 class DtestsController < ApplicationController
   before_filter :signed_in_user
   before_filter :all_dthem
+  filter_resource_access
   # GET /dtests
   # GET /dtests.json
   def index

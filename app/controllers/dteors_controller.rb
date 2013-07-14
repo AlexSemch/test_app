@@ -1,4 +1,5 @@
 class DteorsController < ApplicationController
+  filter_resource_access
   include DthemsHelper
   # GET /dteors
   # GET /dteors.json

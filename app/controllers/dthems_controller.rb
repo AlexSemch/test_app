@@ -1,5 +1,6 @@
 class DthemsController < ApplicationController
   before_filter :signed_in_user
+  filter_resource_access
   # GET /dthems
   # GET /dthems.json
   def index

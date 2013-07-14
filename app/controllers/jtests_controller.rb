@@ -1,7 +1,7 @@
 class JtestsController < ApplicationController
 include JtestsHelper, DthemsHelper
 before_filter :signed_in_user
-
+#filter_resource_access
   def index
     @dtest = Dtest.all
     @jtests = Jtest.order(:dtest_id)

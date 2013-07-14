@@ -10,6 +10,7 @@ gem 'will_paginate', "~> 3.0.4"
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
+gem "declarative_authorization", "~> 0.5.7"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
