@@ -15,6 +15,7 @@
   <%= @danswer.ans_is_true %>
 </p>
 
-
-<%= link_to 'Edit', edit_danswer_path(@danswer) %> |
+<% if permitted_to? :edit, :danswers %>
+  <%= link_to 'Edit', edit_danswer_path(@danswer) %> |
+<% end %>
 <%= link_to 'Back', danswers_path %>

@@ -1,7 +1,17 @@
 <%= content_tag_for(:tr, dquestion) do %>
     <td><a href="<%= dtest_dquestion_path(@dtest,dquestion) %>"><%==  dquestion.question_text %></a> </td>
-    <td><%= link_to t(:show), [@dtest, dquestion] %> ||
+    <td>
+    <% if permitted_to? :show, :dquestions %>
+      <%= link_to t(:show), [@dtest, dquestion] %> ||
+    <% end %>
+    <% if permitted_to? :edit, :dquestions %>
       <%= link_to t(:edit_quest), [:edit, @dtest, dquestion] %> ||
+    <% end %>
+    <% if permitted_to? :destroy, :dquestions %>
       <%= link_to t(:delete), [@dtest, dquestion], method: :delete, data: { confirm: t(:Y_sure) }, remote: true%>
+    <% end %>
+    
+      
+      
     </td>
 <% end %>

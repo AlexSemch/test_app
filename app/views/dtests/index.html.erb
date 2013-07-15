@@ -18,15 +18,25 @@
     <td><%= dtest.count_test %></td>
     <td><%= dtest.time_exec %></td>
     <td><%= dtest.test_descr %></td>
-    <td><%= link_to t(:show), dtest %> |
-    <%= link_to t(:edit), edit_dtest_path(dtest) %> |
-    <%= link_to t(:delete), dtest, method: :delete, data: { confirm: 'Are you sure?' } %> ||
-    <%= link_to t(:add_quest), new_dtest_dquestion_path(dtest) %>
+    <td>
+    <% if permitted_to? :show, :dtests %>
+      <%= link_to t(:show), dtest %> |
+    <% end %>
+    <% if permitted_to? :edit, :dtests %>
+      <%= link_to t(:edit), edit_dtest_path(dtest) %> |
+    <% end %>
+    <% if permitted_to? :destroy, :dtests %>
+      <%= link_to t(:delete), dtest, method: :delete, data: { confirm: 'Are you sure?' } %> ||
+    <% end %>
+    <% if permitted_to? :new, :dquestions %>      
+      <%= link_to t(:add_quest), new_dtest_dquestion_path(dtest) %>
+    <% end %>
   </td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to t(:n_test), new_dtest_path, class: "btn btn-large" %>
+<% if permitted_to? :new, :dtests %> 
+  <%= link_to t(:n_test), new_dtest_path, class: "btn btn-large" %>
+<% end %>

@@ -5,6 +5,6 @@
 </div>
 
 <br />
-
-<%= link_to 'New Danswer', new_danswer_path, id: "new_answer_link", remote: true %>
-                          
+<% if permitted_to? :new, :danswers %>
+    <%= link_to 'New Danswer', new_danswer_path, id: "new_answer_link", remote: true %>
+<% end %>                          

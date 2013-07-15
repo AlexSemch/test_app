@@ -10,6 +10,7 @@
   <%= @dthem.them_text %>
 </p>
 
-
-<%= link_to 'Edit', edit_dthem_path(@dthem) %> |
+<% if permitted_to? :edit, :dthems %>
+  <%= link_to 'Edit', edit_dthem_path(@dthem) %> |
+<% end %>
 <%= link_to 'Back', dthems_path %>

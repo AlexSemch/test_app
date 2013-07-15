@@ -1,20 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @dteor.name %>
+  
+  <h2><%== @dteor.name %></h2>
 </p>
 
 <p>
-  <b>Teor text:</b>
+  
   <%== @dteor.teor_text %>
 </p>
 
-<p>
-  <b>Dthem:</b>
-  <%= @dteor.dthem_id %>
-</p>
 
 
-<%= link_to 'Edit', edit_dteor_path(@dteor) %> |
+<% if permitted_to? :edit, :dteors %>
+  <%= link_to 'Edit', edit_dteor_path(@dteor) %> |
+<% end %>
 <%= link_to 'Back', dteors_path %>

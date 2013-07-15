@@ -13,5 +13,6 @@
 </table>
 
 <br />
-
-<%= link_to 'New Dthem', new_dthem_path, remote: true, id: :new_tem %>
+<% if permitted_to? :new, :dthems %>
+  <%= link_to 'New Dthem', new_dthem_path, remote: true, id: :new_tem %>
+<% end %>

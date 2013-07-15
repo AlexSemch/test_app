@@ -2,8 +2,17 @@
 
       <td><%= dthem.class_st %></td>
       <td><%== dthem.them_text %></td>
-      <td><%= link_to 'Show', dthem %></td>
-      <td><%= link_to 'Edit', edit_dthem_path(dthem) %></td>
-      <td><%= link_to 'Destroy', dthem, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+      <% if permitted_to? :show, :dthems %>
+        <td><%= link_to 'Show', dthem %></td>
+      <% end %>
+      <% if permitted_to? :edit, :dthems %>
+        <td><%= link_to 'Edit', edit_dthem_path(dthem) %></td>
+      <% end %>
+      <% if permitted_to? :destroy, :dthems %>
+        <td><%= link_to 'Destroy', dthem, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+      <% end %>
+      
+     
+     
 
 <% end %>

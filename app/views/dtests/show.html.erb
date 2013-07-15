@@ -20,8 +20,9 @@
   <%= @dtest.test_descr %>
 </p>
 
-
-<%= link_to t(:edit), edit_dtest_path(@dtest) %> |
+<% if permitted_to? :edit, :dtests %>
+  <%= link_to t(:edit), edit_dtest_path(@dtest) %> |
+<% end %>
 <%= link_to t(:back), dtests_path %>
 <%= link_to t(:quests), dtest_dquestions_path(@dtest)  %>
 

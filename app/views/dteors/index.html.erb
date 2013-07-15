@@ -14,13 +14,26 @@
   <tr class="dteor dteor<%= dteor.dthem_id %>">
     <td><%= dteor.name %></td>
     <td><%= dteor.dthem_id %></td>
-    <td><%= link_to 'Show', dteor %></td>
-    <td><%= link_to 'Edit', edit_dteor_path(dteor) %></td>
-    <td><%= link_to 'Destroy', dteor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <% if permitted_to? :show, :dteors %>
+        <%= link_to 'Show', dteor %>
+      <% end %>
+    </td>
+    <td>
+      <% if permitted_to? :edit, :dteors %>
+        <%= link_to 'Edit', edit_dteor_path(dteor) %>
+      <% end %>
+    </td>
+    <td>
+      <% if permitted_to? :destroy, :dteors %>
+        <%= link_to 'Destroy', dteor, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Dteor', new_dteor_path %>
+<% if permitted_to? :new, :dteors %>
+  <%= link_to 'New Dteor', new_dteor_path %>
+<% end %>
