@@ -25,6 +25,8 @@ class Student < ActiveRecord::Base
   #validates :class, format: 1..12
   default_scope order: 'students.round_ball DESC, students.count_of_test DESC'
 
+  KLAS = [5,6,7,8,9,10,11]
+
   def has_user?(student)
     !(student.user_id).nil?
   end

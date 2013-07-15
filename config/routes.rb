@@ -33,6 +33,8 @@ TestApp::Application.routes.draw {
     put :remote_from_user
 
   end
+
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

@@ -7,7 +7,12 @@ class StudentsController < ApplicationController
   end
 
   def create
+
     @student = Student.new(params[:student])
+    if current_user.rol == 'student'
+       @student.user_id = current_user.id
+    end
+
     @student.round_ball = 0.0
     @student.count_of_test = 0
     if @student.save
@@ -17,6 +22,8 @@ class StudentsController < ApplicationController
       render 'new'
     end
   end
+
+
 
   def show
     @student = Student.find(params[:id])
