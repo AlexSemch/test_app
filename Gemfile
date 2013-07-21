@@ -11,6 +11,9 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'bootstrap-datepicker-rails'
 gem 'simple_form'
 gem "declarative_authorization", "~> 0.5.7"
+gem "has_scope", "~> 0.5.1"
+gem "datatables", "~> 1.0.0"
+gem 'activeadmin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

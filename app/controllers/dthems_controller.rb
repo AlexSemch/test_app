@@ -1,10 +1,11 @@
 class DthemsController < ApplicationController
   before_filter :signed_in_user
   filter_resource_access
+  include DthemsHelper
   # GET /dthems
   # GET /dthems.json
   def index
-    @dthems = Dthem.all
+    @dthems = get_tem
 
     respond_to do |format|
       format.html # index.html.erb
