@@ -1,21 +1,27 @@
-<ul class="nav nav-list bs-docs-sidenav">
+<ul class="nav nav-tabs nav-stacked">
           <% if signed_in? %>
           
           <% if permitted_to? :index, :dthems %>
-            <li><a href=<%=dthems_path %>><i class="icon-chevron-right"></i> Thems </a></li>
+            <li><a href=<%=dthems_path %>><i class="icon-chevron-right"></i><%= t(:tems)%></a></li>
           <% end %>
           <% if permitted_to? :index, :dteors %>
-            <li><a href=<%=dteors_path %>><i class="icon-chevron-right"></i> Teories </a></li>
+            <li><a href=<%=dteors_path %>><i class="icon-chevron-right"></i><%= t(:teor) %></a></li>
           <% end %>
-          <% if permitted_to? :index, :dtests %>
-            <li><a href=<%=dtests_path %>><i class="icon-chevron-right"></i> <%= t(:tests)%></a></li>
+          <% if current_user.rol == 'teacher' or current_user.admin?  %>
+
+           <li><a href=<%=dtests_path %>><i class="icon-chevron-right"></i><%= t(:tests)%></a></li>
+          <% else  %>
+          <li><a href=<%=new_jtest_path %>><i class="icon-chevron-right"></i><%= t(:tests)%></a></li>
+
           <% end %>
-          <% if permitted_to? :index, :jtests %>
-            <li><a href=<%=jtests_path %>><i class="icon-chevron-right"></i> Resalt test</a></li>
-          <% end %>
+
+
+
+            <li><a href=<%=jtests_path %>><i class="icon-chevron-right"></i><%= t(:resalt_test) %></a></li>
+
           <li class="divider"></li>
-          <li><a href=<%= students_path %>><i class="icon-chevron-right"></i> <%= t(:students)%></a></li>
-          <li><a href=<%= students_top_students_path %>><i class="icon-chevron-right"></i> <%= t(:top_student)%></a></li>
+          <li><a href=<%= students_path %>><i class="icon-chevron-right"></i><%= t(:student)%></a></li>
+          <li><a href=<%= students_top_students_path %>><i class="icon-chevron-right"></i><%= t(:top_students)%></a></li>
 
                   
           <% end %>

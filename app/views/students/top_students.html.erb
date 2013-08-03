@@ -1,28 +1,24 @@
-<ul class="student">
-  <% i=0 %>
-  <div class="select_drop">
-  <%= select_tag "count", "<option>5</option><option>10</option><option>15</option><option>20</option>".html_safe, id: :se_t %>
-
-
-  </div>
   <div id="top_s">
-  <table class="table table-bordered table-striped table-hover table-condensed" border="2px">
+  <table id="top_student" class="display">
+    <thead>
     <tr>
-      <th><%= t(:N_pp) %></th>
+      <th><%= t(:class_st) %></th>
       <th><%= t(:student) %></th>
       <th><%= t(:round_ball) %></th>
     </tr>
+    </thead>
+    <tbody>
     <% @top_student.each do |tstud| %>
 
-        <tr class="top top<%= (i+=1).to_s  %>">
-          <td><%= i.to_s %></td>
+        <tr>
+          <td><%= tstud.class_st %></td>
           <td><%= link_to tstud.name, tstud %></td>
-          <td><%= tstud.round_ball %></td>
+          <td><%= tstud.round_ball.to_f.round(2) %></td>
         </tr>
 
 
 
     <% end %>
+    </tbody>
   </table>
   </div>
-</ul>

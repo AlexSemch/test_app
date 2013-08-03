@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Class st:</b>
+  <b><%= t(:class_st) %></b>
   <%= @dthem.class_st %>
 </p>
 
 <p>
-  <b>Them text:</b>
+  <b><%= t(:tem) %></b>
   <%= @dthem.them_text %>
 </p>
 
 <% if permitted_to? :edit, :dthems %>
-  <%= link_to 'Edit', edit_dthem_path(@dthem) %> |
+  <%= link_to t(:edit), edit_dthem_path(@dthem) %> |
 <% end %>
-<%= link_to 'Back', dthems_path %>
+<%= link_to t(:back), dthems_path %>

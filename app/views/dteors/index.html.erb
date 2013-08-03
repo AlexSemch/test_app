@@ -1,10 +1,10 @@
-<h1>Listing dteors</h1>
-
-<%= select_tag :dthem, options_from_collection_for_select( @thems, :id, :them_text), id: :select_dthemm, :prompt => "All"  %>
+<h1><%= t(:list_teorii) %></h1>
+<div class="select_drop">
+    <%= select_tag :dthem, options_from_collection_for_select( @thems, :id, :them_text), id: :select_dthemm, :prompt => "All"  %>
+</div>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Dthem</th>
+    <th><%= t(:name) %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,20 +13,19 @@
 <% @dteors.each do |dteor| %>
   <tr class="dteor dteor<%= dteor.dthem_id %>">
     <td><%= dteor.name %></td>
-    <td><%= dteor.dthem_id %></td>
     <td>
       <% if permitted_to? :show, :dteors %>
-        <%= link_to 'Show', dteor %>
+        <%= link_to t(:show), dteor %>
       <% end %>
     </td>
     <td>
       <% if permitted_to? :edit, :dteors %>
-        <%= link_to 'Edit', edit_dteor_path(dteor) %>
+        <%= link_to t(:edit), edit_dteor_path(dteor) %>
       <% end %>
     </td>
     <td>
       <% if permitted_to? :destroy, :dteors %>
-        <%= link_to 'Destroy', dteor, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to t(:delete), dteor, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </td>
   </tr>
@@ -35,5 +34,5 @@
 
 <br />
 <% if permitted_to? :new, :dteors %>
-  <%= link_to 'New Dteor', new_dteor_path %>
+  <%= link_to t(:add_teor), new_dteor_path %>
 <% end %>

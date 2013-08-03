@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter { |c| Authorization.current_user = c.current_user }
   protect_from_forgery
+
   include SessionsHelper
 
   # Force signout to prevent CSRF attacks
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
     super
   end
 
-
+ 
 
   def default_url_options(options={})
     logger.debug "default_url_options is passed options: #{options.inspect}\n"

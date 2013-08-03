@@ -4,7 +4,12 @@ before_filter :signed_in_user
 #filter_resource_access
   def index
     @dtest = Dtest.all
-    @jtests = Jtest.order(:dtest_id)
+    if current_user.rol == 'student'
+      @jtests = Jtest.where(student_id: current_user.student.id).order(:dtest_id)
+    else
+      @jtests = Jtest.order(:dtest_id)
+    end
+
   end
 
   def index_detal

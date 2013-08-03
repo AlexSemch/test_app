@@ -14,6 +14,9 @@ gem "declarative_authorization", "~> 0.5.7"
 gem "has_scope", "~> 0.5.1"
 gem "datatables", "~> 1.0.0"
 gem 'activeadmin'
+gem 'jquery-datatables-rails', '~> 1.11.2'
+gem 'jquery-ui-rails'
+#gem "i18n-js", "~> 2.1.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

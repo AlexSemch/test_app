@@ -1,9 +1,9 @@
-<h1>Listing dthems</h1>
+<h1><%= t(:list_tem) %></h1>
 
 <table id="index_dtem">
   <tr>
-    <th>Class st</th>
-    <th>Them text</th>
+    <th><%= t(:class_st) %></th>
+    <th><%= t(:tem) %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,5 +14,5 @@
 
 <br />
 <% if permitted_to? :new, :dthems %>
-  <%= link_to 'New Dthem', new_dthem_path, remote: true, id: :new_tem %>
+  <%= link_to t(:new_tem), new_dthem_path, remote: true, id: :new_tem %>
 <% end %>

@@ -13,4 +13,7 @@ en:
   test_descr: "Descr to test"
   edit_test: "Editing test"
   list_test: "Listing tests"
+  resalt_test: "Result tests"
+  test_go: "Begin test"
+  finish_test: "Finish test"
 

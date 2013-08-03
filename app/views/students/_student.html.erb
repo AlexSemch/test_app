@@ -1,25 +1,37 @@
-<li>
-  <% if student.user_id != nil %>
+<div class="well">
+      <div class="row">
+          <div class="span2">
+            <% if student.user_id != nil %>
+                  <%= gravatar_for_student student, size: 100 %>
+            <% end %>
+          </div>
+          <div class="span9">
+           <h3> <%= link_to student.first_name + ' ' + student.name + ' ' + student.second_name, student %> </h3> <br />
+              <h4> <%= (student.round_ball).to_f.round(2)  %> </h4>
 
-  <%= gravatar_for_student student, size: 52 %>
-   <% end %>
-  <%= link_to student.first_name + ' ' + student.name + ' ' + student.second_name, student %>
-  <%= student.round_ball %>   <%= student.count_of_test %>
-  <% if current_user.admin? %>
-      | <%= link_to t(:delete), student, method: :delete,
-                    data: { confirm: t(:Y_sure) } %>
-      | <%= link_to t(:edit), edit_student_path(student), method: :get  %>
 
-		
-  <% end %>
-  <div class="student-edit">
-    <% if current_user.id == student.user_id %>
-        <%= button_to t(:Remot_from_user), student_remote_from_user_path(student), action: :remote_from_user, method: :put, class: "btn btn-mini btn-warning " %>
-    <% else %>
-        <% unless student.has_user?(student) %>
-            <%= button_to t(:Add_to_user), student_add_to_user_path(student), action: :add_to_user, method: :put, class: "btn btn-mini btn-success" %>
-        <% end %>
-    <% end %>
-  </div>
-</li>
+            <% if current_user.id == student.user_id %>
+                <%= button_to t(:Remot_from_user), student_remote_from_user_path(student), action: :remote_from_user, method: :put, class: "btn btn-mini btn-warning " %>
+            <% else %>
+                <% unless student.has_user?(student) %>
+                    <%= button_to t(:Add_to_user), student_add_to_user_path(student), action: :add_to_user, method: :put, class: "btn btn-mini btn-success" %>
+                <% end %>
+            <% end %>
+            </div>
+            <div class="span1">
+              <% if current_user.admin? %>
+                    <%== link_to(student, method: :delete,
+                              data: { confirm: t(:Y_sure) }, title: t(:delete)) do  %>
+                      <i class="icon-trash"></i>
+                    <% end %>  <br />
+
+                   <%= link_to(edit_student_path(student), title: t(:edit)) do   %>
+                        <i class="icon-edit"></i>
+                   <% end %>
+            <% end %>
+            </div>
+
+
+    </div>
+</div>
 
