@@ -8,12 +8,15 @@ class DthemsController < ApplicationController
     @dthems = get_tem
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @dthems }
+      if get_tem
+        format.html # index.html.erb
+        format.json { render json: @dthems }
+      else
+        format.html { redirect_to new_student_path, notice: t(:vvedit_dani)}
+      end
     end
   end
 
-  # GET /dthems/1
   # GET /dthems/1.json
   def show
     @dthem = Dthem.find(params[:id])

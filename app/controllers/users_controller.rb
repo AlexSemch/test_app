@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = t(:welcome)
-      redirect_to @user
+      redirect_to new_student_path
     else
       render 'new'
     end

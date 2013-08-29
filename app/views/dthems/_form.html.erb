@@ -3,9 +3,8 @@
   <%= f.input :class_st, collection: 7..11, label: t(:class_st) %>
   <%= f.cktext_area :them_text, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
           { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-          { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-          { name: 'styles' },
-          { name: 'colors' }
+          { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+
   ]} %>
   <%= f.button :submit %>
 <% end %>

@@ -1,32 +1,4 @@
-<% if signed_in? and current_user.admin %>
-    <div class="row">
-      <aside class="span4">
-        <section>
-          <%= render 'shared/user_info' %>
-        </section>
-        <selection>
-          <%= render 'shared/stats' %>
-        </selection>
-        <section>
-          <%= render 'shared/micropost_form' %>
-        </section>
-      </aside>
 
-      <div class="span8">
-        <h3>Micropost Feed</h3>
-        <%= render 'shared/feed' %>
-      </div>
-    </div>
-<% elsif signed_in? and current_user.rol == 'teacher' %>
-    
-        TEACHER
-        
-<% elsif signed_in? and current_user.rol == 'student' %>
-        
-        STUDENT
- 
-
-<% else %>
 <div class="center hero-unit">
 
       <%= link_to image_tag('f_en.jpg'), root_path.sub("?locale=ua", "?locale=en"), :title => t(:cheng_lng) %>
@@ -40,9 +12,45 @@
         by ©AlexSemch
     </h2>
   <% unless signed_in? %>
-    <%= link_to t(:sign_up) , signup_path, class: "btn btn-large btn-primary" %>
+    <a href="#sign_ap"  data-toggle="modal" class="btn btn-large btn-primary"><%= t(:sign_up) %></a>
+
   <% end %>
 
 </div>
 
-<% end %>
+
+<!-- Modal -->
+<div id="sign_ap" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h1><%= t(:sign_up) %></h1>
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(User.new) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.label t(:nik) %>
+            <%= f.text_field :nik %>
+
+            <%= f.label t(:email) %>
+            <%= f.text_field :email %>
+
+            <%= f.label t(:password) %>
+            <%= f.password_field :password %>
+
+            <%= f.label :password_confirmation, t(:confirmation) %>
+            <%= f.password_field :password_confirmation %>
+
+        </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <%= f.submit t(:create), class: "btn btn-large btn-primary" %>
+        </div>
+    <% end %>
+    </div>
+
+

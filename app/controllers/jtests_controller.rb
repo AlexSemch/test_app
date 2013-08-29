@@ -4,11 +4,20 @@ before_filter :signed_in_user
 #filter_resource_access
   def index
     @dtest = Dtest.all
-    if current_user.rol == 'student'
+    if current_user.rol == 'student' and current_user.student
       @jtests = Jtest.where(student_id: current_user.student.id).order(:dtest_id)
     else
       @jtests = Jtest.order(:dtest_id)
     end
+    respond_to do |format|
+      if get_tem
+        format.html # index.html.erb
+        format.json { render json: @dtest }
+      else
+        format.html { redirect_to new_student_path, notice: t(:vvedit_dani)}
+      end
+    end
+
 
   end
 
@@ -29,8 +38,8 @@ def new
       format.html 
     else
       format.html {
-      flash[:notise] = 'Chouse student'
-      redirect_to students_path}
+      flash[:notise] = t(:vvedit_dani)
+      redirect_to new_student_path}
     end 
   end
   end

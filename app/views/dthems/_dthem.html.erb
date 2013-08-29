@@ -2,16 +2,26 @@
 
       <td><%= dthem.class_st %></td>
       <td><%== dthem.them_text %></td>
+      <td>
       <% if permitted_to? :show, :dthems %>
-        <td><%= link_to t(:show), dthem %></td>
+        <%= link_to(dthem, title: t(:show)) do  %>
+          <i class="icon-search"></i>
+        <% end %>
+
       <% end %>
       <% if permitted_to? :edit, :dthems %>
-        <td><%= link_to t(:edit), edit_dthem_path(dthem) %></td>
+        <%= link_to(edit_dthem_path(dthem), title: t(:edit)) do %>
+          <i class="icon-edit"></i>
+        <% end %>
+
       <% end %>
       <% if permitted_to? :destroy, :dthems %>
-        <td><%= link_to t(:delete), dthem, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+        <%= link_to(dthem, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, title: t(:delete)) do  %>
+              <i class="icon-trash"></i>
+        <% end %>
+
       <% end %>
-      
+        </td>
      
      
 

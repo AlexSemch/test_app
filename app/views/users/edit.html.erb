@@ -8,8 +8,12 @@
       <%= f.submit t(:save), class: "btn btn-large btn-primary" %>
     <% end %>
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails"> <%= t(:change)  %></a> <br>
-    <%= link_to t(:add_student), new_student_path %>
+    <a href="http://gravatar.com/emails"> <%= t(:change)  %></a> <br />
+    <% if current_user.student  %>
+            <%= link_to t(:edit_student), edit_student_path(current_user.student), class: "btn btn-large btn-primary" %>
+    <% else %>
+            <%= link_to t(:add_student), new_student_path, class: "btn btn-large btn-primary" %>
+    <% end %>
 
   </div>
 </div>

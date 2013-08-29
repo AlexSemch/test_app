@@ -1,7 +1,0 @@
-<li>
-  <%= link_to people.pip,  people %>
-  <% if current_user.admin? && !current_user?(user) %>
-     | <%= link_to "delete", people, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
-</li>

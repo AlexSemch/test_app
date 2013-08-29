@@ -11,7 +11,7 @@ class DteorsController < ApplicationController
         format.html # index.html.erb
         format.json { render json: @dteors }          
       else
-        format.html { redirect_to students_path}
+        format.html { redirect_to new_student_path, notice: t(:vvedit_dani)}
       end
       
     end
