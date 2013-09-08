@@ -1,4 +1,4 @@
-<div id="new_dquest_form">
+<div id="new_dquest_form" class="well well-small">
 <%= form_for([@dtest, @dquestion], remote: true) do |f| %>
   <% if @dquestion.errors.any? %>
     <div id="error_explanation">
@@ -24,6 +24,25 @@
   <div class="field">
     <%= f.label t(:count_answer) %><br />
     <%= f.number_field :count_answer %>
+  </div>
+
+  <div class="offset1">
+      <%= f.fields_for :danswers do |builder| %>
+        <table border="0px" style="width: 100%">
+          <tr>
+            <th><%= t(:is_true) %></th>
+            <th><%= t(:answer_text) %></th>
+          </tr>
+          <tr>
+            <td><%= builder.check_box :ans_is_true %></td>
+            <td><%= builder.cktext_area :answer_text, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 40 , :toolbarGroups => [
+                    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
+
+                    ]} %></td>
+          </tr>
+
+        </table>
+      <% end %>
   </div>
   <div class="actions">
     <%= f.submit options={ :class => "btn btn-inverse"} %>

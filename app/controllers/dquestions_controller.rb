@@ -21,7 +21,7 @@ class DquestionsController < ApplicationController
    
     @dquestion = Dquestion.find(params[:id])
     session[:quest_id] = @dquestion.id
-
+    @danswers = Danswer.where(dquestion_id: @dquestion.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: [@dtest, @dquestion] }
@@ -49,9 +49,10 @@ class DquestionsController < ApplicationController
   def create
    
     @dquestion = @dtest.dquestions.new(params[:dquestion])
+
     respond_to do |format|
-      if @dquestion.save  
-        
+      if @dquestion.save
+        # @dquestion.count_answer
         format.html { redirect_to dtest_dquestions_url(@dtest) }
         format.js
       else
@@ -60,6 +61,7 @@ class DquestionsController < ApplicationController
       end
 
     end
+    #(@dquestion.count_answer).times { |i| Danswer.create!(answer_text:  'Answer  '  + i.to_s,  dquestion_id: @dquestion.id)}
 
   end
 
@@ -72,7 +74,7 @@ class DquestionsController < ApplicationController
     respond_to do |format|
       if @dquestion.update_attributes(params[:dquestion])
         format.html { redirect_to [@dtest, @dquestion], notice: 'Dquestion was successfully updated.' }
-        format.json { head :no_content }
+        format.js
       else
         format.html { render action: "edit" }
         format.json { render json: @dquestion.errors, status: :unprocessable_entity }

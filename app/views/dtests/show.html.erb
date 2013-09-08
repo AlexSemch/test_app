@@ -2,7 +2,7 @@
 
 <p>
   <b><%= t(:test_name)+':' %></b>
- <%== @dtest.test_name %>
+  <%== @dtest.test_name %>
 </p>
 
 <p>
@@ -23,6 +23,7 @@
 <% if permitted_to? :edit, :dtests %>
   <%= link_to t(:edit), edit_dtest_path(@dtest) %> |
 <% end %>
-<%= link_to t(:back), dtests_path %>
-<%= link_to t(:quests), dtest_dquestions_path(@dtest)  %>
-
+<%= link_to t(:back), dtests_path %> <br />
+<div class="center"> 
+	<%= link_to t(:quests), dtest_dquestions_path(@dtest), class: "btn btn-large"  %>
+</div>

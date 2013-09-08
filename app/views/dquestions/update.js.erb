@@ -1,0 +1,3 @@
+$('#edit_dquestion_<%= @dquestion.id %>').remove();
+$('#new_dquest_form').remove();
+$('#index_dquest').append('<%= j render(@dquestion) %>');

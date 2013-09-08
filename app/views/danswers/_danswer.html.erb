@@ -1,18 +1,21 @@
 <%= form_for(danswer)  do |f| %>
-   <div id="danswerform_<%= danswer.id %>">
-    <br />
-    <%= f.check_box :ans_is_true, :disabled => true  %>  <%== danswer.answer_text %>
-    <% if permitted_to? :show, :danswers %>
-      |<%= link_to 'Show', danswer %>|
-    <% end %>
-    <% if permitted_to? :edit, :danswers %>
-       <%= link_to 'Edit', edit_danswer_path(danswer), remote: true %>|
-    <% end %>
-    <% if permitted_to? :destroy, :danswers %>
-         <%= link_to 'Destroy', danswer, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>|
-    <% end %>
-    
+ <div id="danswerform_<%= danswer.id %>">
+
+    <%= f.check_box :ans_is_true, :disabled => true  %>   <%== danswer.answer_text %>
+     <div class="pull-right">
+        <% if permitted_to? :edit, :danswers %>
+            <%= link_to(edit_danswer_path(danswer), remote: true, title: t(:edit))  do %>
+                <i class="icon-edit"></i>
+            <% end %>
+        <% end %>
+        <% if permitted_to? :destroy, :danswers %>
+            <%= link_to(danswer, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, title: t(:delete)) do  %>
+                <i class="icon-trash"></i>
+            <% end %>
+        <% end %>
+
+     </div>
 
     <br />
-   </div>
+ </div>
 <% end %>

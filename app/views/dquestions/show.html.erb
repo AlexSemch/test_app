@@ -1,22 +1,14 @@
 <p id="notice"><%= notice %></p>
+<%= link_to '<< '+t(:back),  dtest_dquestions_url(@dtest.id, @dquestions), class: 'btn' %>  <br />
 
-<p>
-  <b><%= t(:question_text)+':' %></b>
-  <%== @dquestion.question_text %>
-</p>
-
-<p>
-  <b><%= t(:count_answer)+':' %></b>
-  <%= @dquestion.count_answer %>
-</p>
-
-<p>
-  <b><%= t(:test)+':' %></b>
-  <%= @dquestion.dtest_id %>
-</p>
-
-<% if permitted_to? :edit, :dquestions %>
-  <%= link_to t(:edit), [:edit, @dtest, @dquestion] %> |
+<h2>
+    <%== @dquestion.question_text %>
+</h2>
+<div id="danswer_list" class="well">
+  <%= render @danswers %>
+</div>
+<% if permitted_to? :new, :danswers %>
+    <%= link_to t(:new_danswer), new_danswer_path, id: "new_answer_link", remote: true %>
 <% end %>
-<%= link_to t(:back),  dtest_dquestions_url(@dtest.id, @dquestions) %>  <br />
-<%= link_to "answer", danswers_path, class: "btn btn-large" %>
+
+

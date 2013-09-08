@@ -15,17 +15,23 @@
     <td><%= dteor.name %></td>
     <td>
       <% if permitted_to? :show, :dteors %>
-        <%= link_to t(:show), dteor %>
+        <%= link_to(dteor, title: t(:show)) do %>
+          <i class="icon-search"></i>
+        <% end %>
       <% end %>
     </td>
     <td>
       <% if permitted_to? :edit, :dteors %>
-        <%= link_to t(:edit), edit_dteor_path(dteor) %>
+        <%= link_to(edit_dteor_path(dteor), title: t(:edit)) do %>
+          <i class="icon-edit"></i>
+        <% end %>
       <% end %>
     </td>
     <td>
       <% if permitted_to? :destroy, :dteors %>
-        <%= link_to t(:delete), dteor, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to(dteor, method: :delete, data: { confirm: 'Are you sure?' }, title: t(:delete)) do  %>
+          <i class="icon-trash"></i>
+        <% end %>
       <% end %>
     </td>
   </tr>
