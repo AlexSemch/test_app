@@ -65,11 +65,12 @@ def new
   def make_quest(idd)
     @jtest = Jtest.find(idd)
     @current_test = Dtest.find(@jtest.dtest_id)
-    @quests = Dquestion.find_by_sql(  "select *
-      from Dquestions q
-      where q.dtest_id = :test_id
-      ORDER BY random()
-      LIMIT :N", test_id: @current_test.id, N: @current_test.count_test )
+    @quests = Dquestion.where(dtest_id: @current_test.id).order("random()").limit(@current_test.count_test)
+    #@quests = Dquestion.find_by_sql(  "select *
+    #  from Dquestions q
+    #  where q.dtest_id = :test_id
+    # ORDER BY random()
+    #  LIMIT :N", test_id: @current_test.id, N: @current_test.count_test )
 
 
 
@@ -78,11 +79,11 @@ def new
     end
 
     Jquestion.where(:jtest_id => @jtest.id).each do |jquest|
-
-      @answers = Danswer.find_by_sql("select *
-      from Danswers
-      where dquestion_id = :q_id
-      order by random()",q_id: jquest.dquestion_id)
+      @answers = Danswer.where(dquestion_id: jquest.dquestion_id).order("random()")
+      #@answers = Danswer.find_by_sql("select *
+      #from Danswers
+      #here dquestion_id = :q_id
+      #order by random()",q_id: jquest.dquestion_id)
 
       @answers.each do |ans|
         jquest.janswers.create!(danswer_id: ans.id)

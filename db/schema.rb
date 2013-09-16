@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20130711152826) do
   create_table "dquestions", :force => true do |t|
     t.text     "question_text"
     t.integer  "count_answer",  :default => 4
-    t.string   "dtest_id"
+    t.integer  "dtest_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
   end

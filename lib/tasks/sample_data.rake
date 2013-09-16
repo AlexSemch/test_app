@@ -2,6 +2,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     make_admin
+    make_teacher
     #make_users
     #make_microposts
     #make_relationships
@@ -16,6 +17,17 @@ def make_admin
                        password_confirmation: "250989")
   admin.toggle!(:admin)
    
+end
+
+def make_teacher
+  teacher = User.new(  nik:  "teacher",
+                       email: "teacher@teacher.org",
+                       password: "12345678",
+                       password_confirmation: "12345678")
+  teacher.rol = 'teacher'
+  teacher.save
+  #teacher.assign_attributes(rol: :teacher, :without_protection => true)
+  
 end
 
 def make_users

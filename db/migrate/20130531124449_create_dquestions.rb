@@ -3,7 +3,7 @@ class CreateDquestions < ActiveRecord::Migration
     create_table :dquestions do |t|
       t.text :question_text
       t.integer :count_answer, default: 4
-      t.string :dtest_id
+      t.integer :dtest_id
 
       t.timestamps
     end

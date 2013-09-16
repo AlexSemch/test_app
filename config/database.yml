@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: test-postgres_development
+  database: bilogorTesT_development
   pool: 5
   username: postgres
   password: 123456789
@@ -22,7 +22,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: test-postgres_test
+  database: bilogorTesT_test
   pool: 5
   username: postgres
   password: 123456789
@@ -35,7 +35,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: test-postgres_production
+  database: bilogorTesT
   pool: 5
   username: postgres
   password: 123456789

@@ -32,12 +32,16 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.paginate(page: params[:page])
-    @top_student = Student.find_by_sql("select *
+=begin
+  
+rescue Exception => e
+  
+end    @top_student = Student.find_by_sql("select *
       from students
       where round_ball is not null
       order by round_ball DESC, count_of_test DESC
       limit :N", N: 5)
-
+=end
   end
 
   def destroy
@@ -60,13 +64,12 @@ class StudentsController < ApplicationController
   end
 
   def top_students
-     @top_student = Student.find_by_sql("select *
-      from students
-      where round_ball is not null
-      order by round_ball DESC, count_of_test DESC
-      limit :N", N: 20) #params[:n])
-
-
+     @top_student = Student.where("round_ball is not null").order("round_ball DESC, count_of_test DESC").limit(20)
+     #Student.find_by_sql("select *
+     # from students
+     # where round_ball is not null
+     # order by round_ball DESC, count_of_test DESC
+     # limit :N", N: 20) #params[:n])
   end
 
   def edit
