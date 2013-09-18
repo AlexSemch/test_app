@@ -73,7 +73,7 @@ class DquestionsController < ApplicationController
 
     respond_to do |format|
       if @dquestion.update_attributes(params[:dquestion])
-        format.html { redirect_to [@dtest, @dquestion], notice: 'Dquestion was successfully updated.' }
+        format.html { redirect_to [@dtest, @dquestion], notice: t(:updated) }
         format.js
       else
         format.html { render action: "edit" }

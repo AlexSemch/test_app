@@ -1,6 +1,7 @@
-<h1>Editing danswer</h1>
+<% provide(:title,t(:edit)) %>
+<h1><%= t(:edit_answer) %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @danswer %> |
-<%= link_to 'Back', danswers_path %>
+<%= link_to t(:show), @danswer %> |
+<%= link_to t(:back), danswers_path %>

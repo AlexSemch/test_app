@@ -16,7 +16,7 @@
 
         <tr class="top top<%= (i+=1).to_s  %>">
           <td><%= i.to_s %></td>
-          <td><%= link_to tstud.name, tstud %></td>
+          <td><%= link_to tstud.first_name + ' '+ tstud.name, tstud %></td>
           <td><%= tstud.round_ball %></td>
         </tr>
 

@@ -1,7 +1,8 @@
 <h1><%= t(:list_teorii) %></h1>
-<div class="select_drop">
-    <%= select_tag :dthem, options_from_collection_for_select( @thems, :id, :them_text), id: :select_dthemm, :prompt => "All"  %>
-</div>
+
+    <%= select_tag :dthem, options_from_collection_for_select( @thems, :id, :them_text), id: :select_dthemm, :prompt => "All", :class => "selectpicker show-tick show-menu-arrow", 'data-width' => "100%"  %>
+
+
 <table>
   <tr>
     <th><%= t(:name) %></th>

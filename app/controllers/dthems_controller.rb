@@ -50,7 +50,7 @@ class DthemsController < ApplicationController
 
     respond_to do |format|
       if @dthem.save
-        format.html { redirect_to dthems_path, notice: 'Dthem was successfully created.' }
+        format.html { redirect_to dthems_path, notice: t(:created)}
         #format.json { render json: @dthem, status: :created, location: @dthem }
         format.js
       else
@@ -67,7 +67,7 @@ class DthemsController < ApplicationController
 
     respond_to do |format|
       if @dthem.update_attributes(params[:dthem])
-        format.html { redirect_to @dthem, notice: 'Dthem was successfully updated.' }
+        format.html { redirect_to @dthem, notice: t(:updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

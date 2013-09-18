@@ -51,7 +51,7 @@ class DteorsController < ApplicationController
 
     respond_to do |format|
       if @dteor.save
-        format.html { redirect_to @dteor, notice: 'Dteor was successfully created.' }
+        format.html { redirect_to @dteor, notice: t(:created) }
         format.json { render json: @dteor, status: :created, location: @dteor }
       else
         format.html { render action: "new" }
@@ -67,7 +67,7 @@ class DteorsController < ApplicationController
 
     respond_to do |format|
       if @dteor.update_attributes(params[:dteor])
-        format.html { redirect_to @dteor, notice: 'Dteor was successfully updated.' }
+        format.html { redirect_to @dteor, notice: t(:updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

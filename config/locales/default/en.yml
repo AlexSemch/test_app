@@ -25,3 +25,4 @@ en:
   student: "Student"
   show: "Show"
   back: "Back"
+  autor_error: "Invalid email/password combination"

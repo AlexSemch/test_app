@@ -12,7 +12,7 @@
 
         <tr>
           <td><%= tstud.class_st %></td>
-          <td><%= link_to tstud.name, tstud %></td>
+          <td><%= link_to tstud.first_name + ' '+ tstud.name, tstud %></td>
           <td><%= tstud.round_ball.to_f.round(2) %></td>
         </tr>
 

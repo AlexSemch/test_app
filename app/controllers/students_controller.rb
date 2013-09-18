@@ -101,7 +101,7 @@ end    @top_student = Student.find_by_sql("select *
     @student = Student.find(params[:student_id])
     @student.user_id = nil
     if @student.save
-       flash[:saccess] = "successfull remote_from_user"
+       flash[:saccess] = t(:account_sucsesfull_remote)
 
      end 
      redirect_to students_path

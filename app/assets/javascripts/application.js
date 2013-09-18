@@ -18,5 +18,9 @@
 //= require jquery.pjax
 //= require ajax_pagination
 //= require bootstrap-datepicker
+//= require bootstrap-select
 //= require dataTables/jquery.dataTables
 //= require_tree .
+
+$('select').selectpicker();
+

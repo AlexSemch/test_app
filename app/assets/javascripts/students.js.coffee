@@ -7,7 +7,7 @@ jQuery ->
     "oLanguage": {
       "sSearch": "Пошук:"
       "sLengthMenu": "Показувати _MENU_ записів"
-
+      "sInfo": "Показано _START_ - _END_ з _TOTAL_ записів",
 
     }
   } )

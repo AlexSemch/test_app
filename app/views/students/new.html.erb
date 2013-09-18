@@ -6,7 +6,7 @@
     <%= form_for(@student) do |f| %>
         <%= render 'shared/error_messages' , object: f.object %>
         <%= render 'fields', f: f %>
-        <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+        <%= f.submit t(:create), class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

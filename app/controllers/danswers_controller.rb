@@ -37,7 +37,7 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       if @danswer.save
-        format.html { redirect_to danswers_path, notice: 'Danswer was successfully created.' }
+        format.html { redirect_to danswers_path, notice: t(:created) }
         format.js
         #format.json { render json: @danswer, status: :created, location: @danswer }
       else
@@ -54,7 +54,7 @@ class DanswersController < ApplicationController
 
     respond_to do |format|
       if @danswer.update_attributes(params[:danswer])
-        format.html { redirect_to danswers_path, notice: 'Danswer was successfully updated.' }
+        format.html { redirect_to danswers_path, notice: t(:updated) }
         format.js
       else
         format.html { render action: "edit" }

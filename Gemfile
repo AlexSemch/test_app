@@ -16,6 +16,7 @@ gem "datatables", "~> 1.0.0"
 gem 'activeadmin'
 gem 'jquery-datatables-rails', '~> 1.11.2'
 gem 'jquery-ui-rails'
+gem 'bootstrap-select-rails'
 #gem "i18n-js", "~> 2.1.2"
 
 # Bundle edge Rails instead:

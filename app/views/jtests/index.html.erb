@@ -24,14 +24,14 @@
       </tfoot>
     </table>
 <% else %>
-    <table id="jor_student" class="display">
+    <table id="jor_student" class="display" >
       <thead>
       <tr>
         <th>Дата:</th>
         <th>Клас:</th>
         <th>Учень:</th>
         <th>Тест:</th>
-        <th>Оцінка:</th>
+        
       </tr>
       </thead>
       <tfoot class="tfoot">
@@ -39,16 +39,16 @@
       <th></th>
       <th></th>
       <th></th>
-      <th></th>
+     
       </tfoot>
       <tbody>
       <% @jtests.each do |jtest| %>
           <tr>
             <td><%= jtest.created_at.to_date %></td>
             <td><%= jtest.student.class_st %></td>
-            <td><%= jtest.student.first_name + jtest.student.name %></td>
+            <td><%= jtest.student.first_name + ' '+  jtest.student.name %></td>
             <td><%== jtest.dtest.test_name  %></td>
-            <td><%= jtest.ball  %></td>
+          
           </tr>
       <% end %>
       </tbody>
@@ -130,7 +130,9 @@
         var oTable = $('#jor_student').dataTable( {
             "bJQueryUI": "true",
             "oLanguage": {
-                "sSearch": "Пошук"
+                "sSearch": "Пошук",
+                "sLengthMenu": "Показувати _MENU_ записів",
+                "sInfo": "Показано _START_ - _END_ з _TOTAL_ записів"
             }
         } );
 
