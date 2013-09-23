@@ -2,6 +2,8 @@
     <%= select_tag :dthem_id, options_from_collection_for_select(@thems, :id, :them_text), include_blank: true %>
     <%= f.grouped_collection_select :dtest_id, Dthem.order(:them_text), :dtests, :them_text, :id, :test_name, include_blank: true %>
     <div class="center">
-    <%= f.submit t(:test_go), options={ :class => "btn btn-large",} %>
+    <%= f.submit t(:test_go), options={ :class => "btn btn-large"} %>
+
     </div>
+
 <% end %>

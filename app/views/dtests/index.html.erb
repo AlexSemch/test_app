@@ -1,7 +1,7 @@
 <h1><%= t(:list_test) %></h1>
 
-
-<table id="dtest_index" class = "display">
+<div class="table_in">
+<table id="dtest_index" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
   <thead>
   <tr>
     <th><%= t(:class_st) %></th>
@@ -36,12 +36,15 @@
 <% end %>
   </tbody>
   <tfoot class="tfoot">
-  <th></th>
+  <th class="su"></th>
+  <th class="su"></th>
+  <th ></th>
   <th></th>
 
 
   </tfoot>
 </table>
+</div>
 
 <br />
 <% if permitted_to? :new, :dtests %> 
@@ -118,19 +121,27 @@
     $(document).ready(function() {
     /* Initialise the DataTable */
     var oTable = $('#dtest_index').dataTable( {
-    "bJQueryUI": "true",
+
+
     "oLanguage": {
-    "sSearch": "Пошук"
+    "sSearch": "Пошук",
+    "sLengthMenu": "Показувати _MENU_ записів",
+    "sInfo": "Показано _START_ - _END_ з _TOTAL_ записів"
     }
     } );
 
     /* Add a select menu for each TH element in the table footer */
-    $("tfoot th").each( function ( i ) {
+    $("tfoot th.su").each( function ( i ) {
     this.innerHTML = fnCreateSelect( oTable.fnGetColumnData(i) );
     $('select', this).change( function () {
     oTable.fnFilter( $(this).val(), i );
     } );
     } );
+        $('select').selectpicker();
+    } );
+
+    $.extend( $.fn.dataTableExt.oStdClasses, {
+        "sWrapper": "dataTables_wrapper form-inline"
     } );
     </script>
 

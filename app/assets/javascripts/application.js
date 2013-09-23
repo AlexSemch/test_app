@@ -20,7 +20,9 @@
 //= require bootstrap-datepicker
 //= require bootstrap-select
 //= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
 //= require_tree .
 
-$('select').selectpicker();
+
+
 

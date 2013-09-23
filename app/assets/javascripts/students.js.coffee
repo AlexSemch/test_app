@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery -> 
 	$('#top_student').dataTable( {
-    bJQueryUI: true
     "oLanguage": {
       "sSearch": "Пошук:"
       "sLengthMenu": "Показувати _MENU_ записів"

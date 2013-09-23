@@ -1,6 +1,6 @@
 <%= simple_form_for(@dthem, remote: true) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :class_st, collection: 7..11, label: t(:class_st) %>
+  <%= f.input :class_st, collection: 7..11, label: t(:class_st), class: "selectpicker show-tick show-menu-arrow" %>
   <%= f.cktext_area :them_text, :ckeditor => {:language => "uk", :autoParagraph => false, :height => 70 , :toolbarGroups => [
           { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
           { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] }
